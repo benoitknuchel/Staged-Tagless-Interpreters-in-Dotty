@@ -1,9 +1,9 @@
 import scala.quoted._
 
 enum Exp {
-  case int(i: Int)
-  case Var(x: String)
-  case App(x: String, e: Exp)
+  case int(x: Int)
+  case Var(s: String)
+  case App(s: String, e: Exp)
   case Add(e1: Exp, e2: Exp)
   case Sub(e1: Exp, e2: Exp)
   case Mul(e1: Exp, e2: Exp)
@@ -12,7 +12,7 @@ enum Exp {
 }
 
 enum Def {
-  case Declaration(x1: String, x2: String, e: Exp)
+  case Declaration(s1: String, s2: String, e: Exp)
 }
 
 enum Prog {
@@ -25,19 +25,21 @@ object Main {
   import Def._
   import Prog._
 
-  //Environment
-  def env0(x: Unit): Expr[Int] = throw new Exception
-  def fenv0(x: Unit): Expr[Int => Int] = throw new Exception
+  //Environments bases, empty -> throw exception
+  def env0(s: String): Expr[Int] = throw new NoSuchElementException
+  def fenv0(s: String): Expr[Int => Int] = throw new NoSuchElementException
 
   //Polymorphism yee
-  def ext[A](env: (String => Expr[A]), x: String, v: Expr[A]): (String => Expr[A]) = {
-    y: String => if(x == y) v else env(y)
+  //[A] shall be Expr[Int] or Expr[Int => Int]
+  def ext[A](env: (String => A), s: String, v: A): (String => A) = {
+    y: String => if(s == y) v else env(y)
   }
 
+  //The evaluator/compiler
   def eval1(e: Exp, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] = e match {
-    case int(i) => '(i)
-    case Var(x) => env(x)
-    case App(x, e) => '{ (~fenv(x))(~eval1(e, env, fenv)) }
+    case int(x) => x.toExpr //if '(x) compiler says unresolved symbols: value x when pickling Main.scala
+    case Var(s) => env(s)
+    case App(s, e) => '{ (~fenv(s))(~eval1(e, env, fenv)) }
     case Add(e1, e2) => '{ ~eval1(e1, env, fenv) + ~eval1(e2, env, fenv) }
     case Sub(e1, e2) => '{ ~eval1(e1, env, fenv) - ~eval1(e2, env, fenv) }
     case Mul(e1, e2) => '{ ~eval1(e1, env, fenv) * ~eval1(e2, env, fenv) }
@@ -51,26 +53,33 @@ object Main {
   def peval1(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] = p match {
     case Program(Nil, e) => eval1(e, env, fenv)
     case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      '{ def f(x: String): Expr[Int => Int] = ~eval1(e1, ext(env, s2, '(x)), extf(fenv, s1, '(f)))
-      ~peval1(Program(tl, e), env, extf(fenv, s1, f)) }
+      def fun(x: Int): Int = ~eval1(e1, ext(env, s2, '(x)), ext(fenv, s1, '(fun)))
+      ~peval1(Program(tl, e), env, ext(fenv, s1, '(fun)))
     }
   }
 
 
 
   def main(args: Array[String]): Unit = {
-    val program = Program([Declaration
-                            ("fact", "x", Ifz(Var "x",
-                                              int 1,
-                                              Mul(Var "x",
-                                                  (App("fact", Sub(Var "x", int 1))))))
-                          ],
-                          App("fact", int 10))
+    /*
+    val programFactorial = Program(List(Declaration
+                            ("fact", "x", Ifz(Var("x"),
+                                              int(1),
+                                              Mul(Var("x"),
+                                                  (App("fact", Sub(Var("x"), int(1)))))))
+                          ),
+                          App("fact", int(10)))
 
-    val res = peval1(program, env0, fenv0)
+    val res = peval1(programFactorial, env0, fenv0)
+    */
+
+    val first = int(1: Int)
+    val firstRes = eval1(first, env0, fenv0)
+
+
     println("=================")
-    println("run : " + res.run)
-    println("show : " + res.show)
+    println("run : " + firstRes.run)
+    println("show : " + firstRes.show)
     println("=================")
 
   }
