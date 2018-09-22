@@ -25,15 +25,16 @@ object Main {
   import Def._
   import Prog._
 
-  //Environments bases, empty -> throw exception
-  def env0(s: String): Expr[Int] = throw new IllegalArgumentException
-  def fenv0(s: String): Expr[Int => Int] = throw new NoSuchElementException
+  //Environments bases, empty -> throw NoSuchElementException
+  // A: String
+  // B: Expr[Int] or Expr[Int => Int]
+  def env0[A, B](s: A): B = throw new IllegalArgumentException
+  def fenv0[A, B](s: A): B = throw new NoSuchElementException
 
-  //Polymorphism yee
-  //[A] shall be Expr[Int] or Expr[Int => Int]
-  def ext[A](env: (String => A), s: String, v: A): (String => A) = {
-    y: String => if(s == y) v else env(y)
+  def ext[A, B](env: (A => B), s: A, v: B): A => B = {
+    y: A => if(s == y) v else env(y)
   }
+
 
   //The evaluator/compiler
   def eval1(e: Exp, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] = e match {
@@ -50,15 +51,18 @@ object Main {
     }
   }
 
+
   def peval1(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] = p match {
     case Program(Nil, e) => eval1(e, env, fenv)
     case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      def fun(x: Int): Int = ~eval1(e1, ext(env, s2, '(x)), fenv/*ext(fenv, s1, '(fun))*/)
       //s1 = e1(s2)
-      ~peval1(Program(tl, e), env, ext(fenv, s1, '(fun)))
+      //Dunno how to bind s1 to e1 (name to body)
+      //Have to eval e1 and extend fenv by mapping s1 to e1 : is it possible ? They depend on one another
+      //That's why it is not possible to pass '(f) to the ext funtion (compiler error : "could not find proxy for val f...")
+      def f(x: Int): Int = ~eval1(e1, ext(env, s2, '(x)), fenv/*ext(fenv, s1, '(f))*/)
+      ~peval1(Program(tl, e), env, ext(fenv, s1, '(f)))
     }
   }
-
 
 
   def main(args: Array[String]): Unit = {
@@ -86,14 +90,14 @@ object Main {
     println("show : " + snd.show)
     println("=================")
 
-    /*
+
     val first = int(1: Int)
     val firstRes = eval1(first, env0, fenv0)
     println("=================")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
     println("=================")
-    */
+
 
   }
 }
