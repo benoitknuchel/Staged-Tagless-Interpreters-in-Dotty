@@ -26,7 +26,7 @@ object Main {
   import Prog._
 
   //Environments bases, empty -> throw exception
-  def env0(s: String): Expr[Int] = throw new NoSuchElementException
+  def env0(s: String): Expr[Int] = throw new IllegalArgumentException
   def fenv0(s: String): Expr[Int => Int] = throw new NoSuchElementException
 
   //Polymorphism yee
@@ -53,7 +53,8 @@ object Main {
   def peval1(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] = p match {
     case Program(Nil, e) => eval1(e, env, fenv)
     case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      def fun(x: Int): Int = ~eval1(e1, ext(env, s2, '(x)), ext(fenv, s1, '(fun)))
+      def fun(x: Int): Int = ~eval1(e1, ext(env, s2, '(x)), fenv/*ext(fenv, s1, '(fun))*/)
+      //s1 = e1(s2)
       ~peval1(Program(tl, e), env, ext(fenv, s1, '(fun)))
     }
   }
@@ -71,16 +72,28 @@ object Main {
                           App("fact", int(10)))
 
     val res = peval1(programFactorial, env0, fenv0)
-    */
+    println("=================")
+    println("run : " + res.run)
+    println("show : " + res.show)
+    println("=================")*/
 
+    val a = int(0)
+    val b = Add(int(1), Mul(int(2), int(3)))
+    val p = Ifz(a, int(2), b)
+    val snd = eval1(p , env0, fenv0)
+    println("=================")
+    println("run : " + snd.run)
+    println("show : " + snd.show)
+    println("=================")
+
+    /*
     val first = int(1: Int)
     val firstRes = eval1(first, env0, fenv0)
-
-
     println("=================")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
     println("=================")
+    */
 
   }
 }

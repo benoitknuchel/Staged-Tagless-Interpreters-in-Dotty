@@ -7,7 +7,7 @@
 		revision="0.1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180921204821"/>
+		date="20180922170921"/>
 	<dependencies>
 		<module organisation="ch.epfl.lamp" name="scala-library">
 			<revision name="0.9.0-RC1" status="release" pubdate="20180705190802" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lampepfl/dotty" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="13">
