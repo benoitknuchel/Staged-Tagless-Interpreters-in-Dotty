@@ -26,13 +26,12 @@ object Main {
   import Prog._
 
   //Environments bases, empty -> throw NoSuchElementException
-  // A: String
-  // B: Expr[Int] or Expr[Int => Int]
-  def env0[A, B](s: A): B = throw new NoSuchElementException
-  def fenv0[A, B](s: A): B = throw new NoSuchElementException
+  // A: Expr[Int] or Expr[Int => Int]
+  def env0[A](s: String): A = throw new NoSuchElementException
+  def fenv0[A](s: String): A = throw new NoSuchElementException
 
-  def ext[A, B](env: (A => B), s: A, v: B): A => B = {
-    y: A => if(s == y) v else env(y)
+  def ext[A](env: (String => A), s: String, v: A): String => A = {
+    y: String => if(s == y) v else env(y)
   }
 
 
