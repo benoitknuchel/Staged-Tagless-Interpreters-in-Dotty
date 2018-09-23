@@ -1,8 +1,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/src/main/scala/Main.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/src/main/scala/Main.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/simplestagedinterpreter/src/main/scala/Main.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$App.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Def.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$App$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$int.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Add.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Main$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Ifz$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Var.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Def$Declaration.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Var$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Mul.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Def$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$int$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Sub$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Div$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Add$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Prog$Program$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Def$Declaration$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Sub.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Prog$Program.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Div.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Prog.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Prog$.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Main.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Ifz.class, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes/Exp$Mul$.class)[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
@@ -12,15 +12,175 @@
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/src/main/scala/Main.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
-[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Exp$.int, Exp$.Ifz, Prog$.Program, Exp$.Var, Exp$.App, Exp, Exp$.Add, Def, Main, Prog, Exp$.Div, Def$.Declaration, Exp$.Sub, Exp$.Mul)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/simplestagedinterpreter/src/main/scala/Main.scala, /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/src/main/scala/Main.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 1 sources: invalidated sources (2) exceeded 50.0% of all sources[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/simplestagedinterpreter/target/scala-0.9/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting ch.epfl.lamp:dotty-sbt-bridge:0.9.0-RC1:compile for Scala 0.9.0-RC1[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting ch.epfl.lamp:dotty-sbt-bridge:0.9.0-RC1:compile for Scala 0.9.0-RC1[0m
 [0m[[0m[0mdebug[0m] [0m[0mCalling Dotty compiler with arguments  (CompilerInterface):[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes:/home/benoit/.ivy2/cache/ch.epfl.lamp/scala-library/jars/scala-library-0.9.0-RC1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/SimplestInterpreter/simplestinterpreter/target/scala-0.9/classes:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty_0.9/jars/dotty_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-compiler_0.9/jars/dotty-compiler_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-interfaces/jars/dotty-interfaces-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-library_0.9/jars/dotty-library_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-asm/bundles/scala-asm-6.0.0-scala-1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.0.jar:/home/benoit/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.1.6.jar:/home/benoit/.ivy2/cache/org.scala-sbt/util-interface/jars/util-interface-1.1.3.jar:/home/benoit/.ivy2/cache/org.jline/jline/jars/jline-3.7.0.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal-jna/jars/jline-terminal-jna-3.7.0.jar:/home/benoit/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.2.2.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal/jars/jline-terminal-3.7.0.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty_0.9/jars/dotty_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-compiler_0.9/jars/dotty-compiler_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-interfaces/jars/dotty-interfaces-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-library_0.9/jars/dotty-library_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.6.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-asm/bundles/scala-asm-6.0.0-scala-1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.0.jar:/home/benoit/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.1.6.jar:/home/benoit/.ivy2/cache/org.scala-sbt/util-interface/jars/util-interface-1.1.3.jar:/home/benoit/.ivy2/cache/org.jline/jline/jars/jline-3.7.0.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal-jna/jars/jline-terminal-jna-3.7.0.jar:/home/benoit/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.2.2.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal/jars/jline-terminal-3.7.0.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 5.783705027 s[0m
-[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/simplestagedinterpreter/target/scala-0.9/classes:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty_0.9/jars/dotty_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-compiler_0.9/jars/dotty-compiler_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-interfaces/jars/dotty-interfaces-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-library_0.9/jars/dotty-library_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-asm/bundles/scala-asm-6.0.0-scala-1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.0.jar:/home/benoit/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.1.6.jar:/home/benoit/.ivy2/cache/org.scala-sbt/util-interface/jars/util-interface-1.1.3.jar:/home/benoit/.ivy2/cache/org.jline/jline/jars/jline-3.7.0.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal-jna/jars/jline-terminal-jna-3.7.0.jar:/home/benoit/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.2.2.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal/jars/jline-terminal-3.7.0.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty_0.9/jars/dotty_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-compiler_0.9/jars/dotty-compiler_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-interfaces/jars/dotty-interfaces-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/ch.epfl.lamp/dotty-library_0.9/jars/dotty-library_0.9-0.9.0-RC1.jar:/home/benoit/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.6.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-asm/bundles/scala-asm-6.0.0-scala-1.jar:/home/benoit/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.0.jar:/home/benoit/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.1.6.jar:/home/benoit/.ivy2/cache/org.scala-sbt/util-interface/jars/util-interface-1.1.3.jar:/home/benoit/.ivy2/cache/org.jline/jline/jars/jline-3.7.0.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal-jna/jars/jline-terminal-jna-3.7.0.jar:/home/benoit/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.2.2.jar:/home/benoit/.ivy2/cache/org.jline/jline-terminal/jars/jline-terminal-3.7.0.jar[0m
+[0m[[0m[31merror[0m] [0m[0m## Exception when compiling 1 sources to /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/simplestagedinterpreter/target/scala-0.9/classes[0m
+[0m[[0m[31merror[0m] [0m[0mCould not find proxy for val f$1: scala.quoted.Expr in List(val f$1, method $anonfun$14, method peval1, module class Main$, module class <empty>, module class <root>), encl = method $anonfun$15, owners = method $anonfun$15, method peval1, object Main, package <empty>, package <root>; enclosures = method $anonfun$15, package <empty>, package <root>[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.LambdaLift$Lifter.searchIn$1(LambdaLift.scala:374)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.LambdaLift$Lifter.proxy(LambdaLift.scala:387)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.LambdaLift$Lifter.proxyRef(LambdaLift.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.LambdaLift.transformIdent(LambdaLift.scala:519)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.goIdent(MegaPhase.scala:532)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformNamed$1(MegaPhase.scala:224)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:380)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.mapDefDef$1(MegaPhase.scala:244)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformNamed$1(MegaPhase.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:380)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStat$2(MegaPhase.scala:389)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.$anonfun$1(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStats(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:280)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.mapDefDef$1(MegaPhase.scala:244)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformNamed$1(MegaPhase.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:380)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStat$2(MegaPhase.scala:389)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.$anonfun$1(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStats(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:280)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees$$anonfun$1(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTrees(MegaPhase.scala:405)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:265)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:292)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:291)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:281)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.mapDefDef$1(MegaPhase.scala:244)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformNamed$1(MegaPhase.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:380)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStat$2(MegaPhase.scala:389)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.$anonfun$1(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStats(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:333)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformNamed$1(MegaPhase.scala:250)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:380)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStat$2(MegaPhase.scala:389)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.$anonfun$1(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.mapConserve(List.scala:176)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformStats(MegaPhase.scala:394)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.mapPackage$1(MegaPhase.scala:350)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnnamed$1(MegaPhase.scala:353)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformTree(MegaPhase.scala:381)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.transformUnit(MegaPhase.scala:400)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.transform.MegaPhase.run(MegaPhase.scala:412)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.core.Phases$Phase.runOn$$anonfun$1(Phases.scala:298)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.immutable.List.map(List.scala:283)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.core.Phases$Phase.runOn(Phases.scala:300)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.runPhases$4$$anonfun$4(Run.scala:171)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.compat.java8.JProcedure1.apply(JProcedure1.java:18)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.compat.java8.JProcedure1.apply(JProcedure1.java:10)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:32)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:29)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:194)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.runPhases$5(Run.scala:186)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.compileUnits$$anonfun$1(Run.scala:194)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.compat.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.util.Stats$.maybeMonitored(Stats.scala:88)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.compileUnits(Run.scala:201)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.compileSources(Run.scala:136)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Run.compile(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Driver.doCompile(Driver.scala:31)[0m
+[0m[[0m[31merror[0m] [0m[0mdotty.tools.dotc.Driver.process(Driver.scala:134)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.CachedCompilerImpl.run(CompilerInterface.scala:61)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.CachedCompilerImpl.run(CompilerInterface.scala:51)[0m
+[0m[[0m[31merror[0m] [0m[0mxsbt.CompilerInterface.run(CompilerInterface.scala:35)[0m
+[0m[[0m[31merror[0m] [0m[0msun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0msun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
+[0m[[0m[31merror[0m] [0m[0msun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.reflect.Method.invoke(Method.java:498)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.call(AnalyzingCompiler.scala:237)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:111)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:90)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.$anonfun$compile$3(MixedAnalyzingCompiler.scala:83)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.timed(MixedAnalyzingCompiler.scala:134)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compileScala$1(MixedAnalyzingCompiler.scala:74)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.MixedAnalyzingCompiler.compile(MixedAnalyzingCompiler.scala:117)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1(IncrementalCompilerImpl.scala:305)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileInternal$1$adapted(IncrementalCompilerImpl.scala:305)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.doCompile(Incremental.scala:101)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$compile$4(Incremental.scala:82)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon.recompileClasses(IncrementalCommon.scala:110)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCommon.cycle(IncrementalCommon.scala:57)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.$anonfun$compile$3(Incremental.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.manageClassfiles(Incremental.scala:129)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.Incremental$.compile(Incremental.scala:75)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompile$.apply(Compile.scala:61)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileInternal(IncrementalCompilerImpl.scala:309)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.$anonfun$compileIncrementally$1(IncrementalCompilerImpl.scala:267)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.handleCompilationError(IncrementalCompilerImpl.scala:158)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compileIncrementally(IncrementalCompilerImpl.scala:237)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.inc.IncrementalCompilerImpl.compile(IncrementalCompilerImpl.scala:68)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.compileIncrementalTaskImpl(Defaults.scala:1432)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Defaults$.$anonfun$compileIncrementalTask$1(Defaults.scala:1406)[0m
+[0m[[0m[31merror[0m] [0m[0mscala.Function1.$anonfun$compose$1(Function1.scala:44)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:39)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.std.Transform$$anon$4.work(System.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$2(Execute.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.work(Execute.scala:272)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.Execute.$anonfun$submit$1(Execute.scala:263)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:174)[0m
+[0m[[0m[31merror[0m] [0m[0msbt.CompletionService$$anon$2.call(CompletionService.scala:37)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.Thread.run(Thread.java:748)[0m
+[0m[[0m[31merror[0m] [0m[0m           [0m
