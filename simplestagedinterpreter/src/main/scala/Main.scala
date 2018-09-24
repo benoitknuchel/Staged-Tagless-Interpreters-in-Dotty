@@ -103,7 +103,7 @@ object Main {
     //val p = Ifz(a, int(2), b)
     val snd = eval(b , env0, fenv0)
     println("=================2")
-    println("run : " + snd.run) //ArrayIndexOutOfBoundsException
+    println("run : " + snd.run) //ArrayIndexOutOfBoundsException, snd is already evaluated -> it fails when running (same when I try with factorial)
     println("show : " + snd.show)
     println("=================")
 
@@ -117,7 +117,6 @@ object Main {
                           App("twoTimesFact", int(5)))
     val res = peval(factorial, env0, fenv0)
     println("=================3")
-    println("The program comes here and then crash, 'factorial' is already evaluated")
     println("run : " + res.run)
     println("show : " + res.show)
     println("=================")
