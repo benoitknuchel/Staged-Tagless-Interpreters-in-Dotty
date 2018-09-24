@@ -37,7 +37,7 @@ object Main {
 
   //The evaluator
   def eval(e: Exp, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = e match {
-    case int(x) => '(Some(x)) //doesn't recognize x ("unresolved symbol"), compile if I write '(Some(1)) but still get an ArrayOutOfBoundsException
+    case int(x) => '(Some(~x.toExpr))
     case Var(s) => '(~env(s))
     case App(s, e) => '{
       ~eval(e, env, fenv) match {
@@ -91,20 +91,19 @@ object Main {
 
     //Some examples
 
-    val first = Var("x")//int(1: Int)
+    val first = int(1: Int)
     val firstRes = eval(first, env0, fenv0)
-    println("=================")
+    println("=================1")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
-    println("=================")
 
 
-    val a = int(0)
-    val b = Add(int(1), Mul(int(2), int(3)))
-    val p = Ifz(a, int(2), b)
+    //val a = int(0)
+    val b = Add(int(1), int(1))//Mul(int(2), int(3)))
+    //val p = Ifz(a, int(2), b)
     val snd = eval(b , env0, fenv0)
-    println("=================")
-    println("run : " + snd.run)
+    println("=================2")
+    println("run : " + snd.run) //ArrayIndexOutOfBoundsException
     println("show : " + snd.show)
     println("=================")
 
@@ -116,9 +115,8 @@ object Main {
                                                   (App("fact", Sub(Var("x"), int(1)))))))
                           , Declaration("twoTimesFact", "y", Mul(int(2), App("fact", Var("y"))))),
                           App("twoTimesFact", int(5)))
-
     val res = peval(factorial, env0, fenv0)
-    println("=================")
+    println("=================3")
     println("The program comes here and then crash, 'factorial' is already evaluated")
     println("run : " + res.run)
     println("show : " + res.show)
