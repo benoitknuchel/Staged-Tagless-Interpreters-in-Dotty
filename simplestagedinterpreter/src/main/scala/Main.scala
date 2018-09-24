@@ -89,7 +89,8 @@ object Main {
     val p = Ifz(a, int(2), b)
     val snd = eval1(p , env0, fenv0)
     println("=================")
-    println("run : " + snd.run)
+    println("run : " + snd.run)cakeaucottage12
+
     println("show : " + snd.show)
     println("=================")
 
