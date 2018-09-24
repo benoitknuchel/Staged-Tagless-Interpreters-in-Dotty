@@ -1,5 +1,5 @@
 gitignore
 *.class
 *.hasTasty
-simplestagedinterpreter/idea/
+simplestagedinterpreter/.idea/
 simplestagedinterpreter/target/

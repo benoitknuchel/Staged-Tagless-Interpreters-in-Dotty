@@ -90,7 +90,7 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     //Some examples
-    
+
     val first = Var("x")//int(1: Int)
     val firstRes = eval(first, env0, fenv0)
     println("=================")
