@@ -91,11 +91,11 @@ object Main {
 
     //Some examples
 
-    val first = Program(Nil, int(1: Int))
-    val firstRes = peval(first, env0, fenv0)
-    println("=================1")
-    println("run : " + firstRes.run)
-    println("show : " + firstRes.show)
+    val first = Add(int(1), int(1))//Program(Nil, Add(int(1), int(1)))
+    val firstRes = eval(first, env0, fenv0)
+    //println("=================1")
+    println("run : " + firstRes.show)
+    println("show : " + firstRes.run)
 
 /*
     //val a = int(0)
