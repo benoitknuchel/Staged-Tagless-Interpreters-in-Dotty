@@ -3,3 +3,5 @@ gitignore
 *.hasTasty
 simplestagedinterpreter/.idea/
 simplestagedinterpreter/target/
+binding-time_improvement/.idea/
+binding-time_improvement/target/
