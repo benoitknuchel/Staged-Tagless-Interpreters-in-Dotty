@@ -91,13 +91,13 @@ object Main {
 
     //Some examples
 
-    val first = int(1: Int)
-    val firstRes = eval(first, env0, fenv0)
+    val first = Program(Nil, int(1: Int))
+    val firstRes = peval(first, env0, fenv0)
     println("=================1")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
 
-
+/*
     //val a = int(0)
     val b = Add(int(1), int(1))//Mul(int(2), int(3)))
     //val p = Ifz(a, int(2), b)
@@ -119,7 +119,7 @@ object Main {
     println("=================3")
     println("run : " + res.run)
     println("show : " + res.show)
-    println("=================")
+    println("=================")*/
 
   }
 }

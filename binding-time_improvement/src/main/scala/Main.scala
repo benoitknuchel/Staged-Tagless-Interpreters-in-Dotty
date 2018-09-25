@@ -25,9 +25,9 @@ object Main {
   import Def._
   import Prog._
 
-  //Environments bases, empty -> None
-  def env0(s: String): Expr[Option[Int]] = '(None)
-  def fenv0(s: String): Expr[Int => Option[Int]] = '((x: Int) => None)
+  //Environments bases, empty -> NoSuchElementException
+  def env0[A](s: String): A = throw new NoSuchElementException
+  def fenv0[A](s: String): A = throw new NoSuchElementException
 
   //[A]: Expr[Option[Int]] or Expr[Int => Option[Int]]
   def ext[A](env: (String => A), s: String, v: A): String => A = {
@@ -36,71 +36,100 @@ object Main {
 
 
   //The evaluator
-  def eval(e: Exp, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = e match {
-    case int(x) => '(Some(~x.toExpr))
-    case Var(s) => '(~env(s))
-    case App(s, e) => '{
-      ~eval(e, env, fenv) match {
-        case Some(x) => (~fenv(s))(x)
-        case _ => None
-      }
-    }
-    case Add(e1, e2) => '{
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x+y)
-        case _ => None
-      }
-    }
-    case Sub(e1, e2) => '{
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x-y)
-        case _ => None
-      }
-    }
-    case Mul(e1, e2) => '{
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x*y)
-        case _ => None
-      }
-    }
-    case Div(e1, e2) => '{
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => if(y != 0) Some(x/y) else None
-        case _ => None
-      }
-    }
-    case Ifz(e1, e2, e3) => '{
-      ~eval(e1, env, fenv) match {
-        case Some(x) => if(x == 0) ~eval(e2, env, fenv) else ~eval(e3, env, fenv)
-        case _ => None
-      }
-    }
+  def eval[B](e: Exp, env: String => Expr[Int], fenv: String => Expr[Int => Int], k: Option[Expr[Int]] => Expr[B]): Expr[B] = e match {
+    case int(x) => k(Some(x.toExpr))
+    case Var(s) => k(Some(env(s)))
+    case App(s, e) =>
+      eval(e, env, fenv,
+        (r: Option[Expr[Int]]) => r match {
+          case Some(x) => k(Some('{(~fenv(s))(~x)}))
+          case _ => k(None)
+        }
+      )
+    case Add(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x + ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+    case Sub(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x - ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+    case Mul(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x * ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+    case Div(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => '{if(~y == 0) ~k(None) else ~k(Some('{~x / ~y}))}
+              case _ => k(None)
+            }
+          )
+        }
+      )
+    case Ifz(e1, e2, e3) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => r match {
+          case Some(x) => '{if(~x == 0) ~eval(e2, env, fenv, k) else ~eval(e3, env, fenv, k)}
+          case _ => k(None)
+        }
+      )
   }
 
-  def peval(p: Prog, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = p match {
-    case Program(Nil, e) => eval(e, env, fenv)
-    //recursively eval each declaration
-    case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      lazy val f: Int => Option[Int] = (x: Int) => ~eval(e1, ext(env, s2, '(Some(x))), ext(fenv, s1, '(f)))
-      ~peval(Program(tl, e), env, ext(fenv, s1, '(f)))
-    }
-  }
+  def peval(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int]): Expr[Int] =
+    peval_k(p, env, fenv,
+      (x: Option[Expr[Int]]) => x match {
+        case Some(x) => x
+        case None => throw new IllegalArgumentException
+      })
 
+  def peval_k(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int], k: Option[Expr[Int]] => Expr[Int]): Expr[Int] =
+    p match {
+      case Program(Nil, e) => eval(e, env, fenv, k)
+      //recursively eval each declaration
+      case Program(Declaration(s1, s2, e1)::tl, e) => '{
+        lazy val f: Int => Int = (x: Int) => ~eval(e1, ext(env, s2, '(x)), ext(fenv, s1, '(f)), k)
+        ~peval_k(Program(tl, e), env, ext(fenv, s1, '(f)), k)
+      }
+    }
 
   def main(args: Array[String]): Unit = {
 
     //Some examples
 
-    val first = int(1: Int)
-    val firstRes = eval(first, env0, fenv0)
+    val first = Program(Nil, int(1: Int))
+    val firstRes = peval(first, env0, fenv0)
     println("=================1")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
 
-
-    //val a = int(0)
-    val b = Add(int(1), int(1))//Mul(int(2), int(3)))
-    //val p = Ifz(a, int(2), b)
+    /*
+    val a = int(0)
+    val b = Add(int(1), Mul(int(2), int(3)))
+    val p = Ifz(a, int(2), b)
     val snd = eval(b , env0, fenv0)
     println("=================2")
     println("run : " + snd.run) //ArrayIndexOutOfBoundsException, snd is already evaluated -> it fails when running (same when I try with factorial)
@@ -119,7 +148,7 @@ object Main {
     println("=================3")
     println("run : " + res.run)
     println("show : " + res.show)
-    println("=================")
+    println("=================")*/
 
   }
 }
