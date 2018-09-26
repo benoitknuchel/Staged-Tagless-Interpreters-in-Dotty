@@ -122,21 +122,20 @@ object Main {
   def main(args: Array[String]): Unit = {
 
     //Some examples
-    val first = Program(Nil, Div(int(4), int(0)))
+    val first = Program(Nil, Div(int(4), int(2)))
     val firstRes = peval(first, env0, fenv0)
     println("=================1")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
 
 
-    val a = int(0)
+    val a = int(1)
     val b = Add(int(1), Mul(int(2), int(3)))
     val p = Program(Nil, Ifz(a, int(2), b))
     val snd = peval(p, env0, fenv0)
     println("=================2")
     println("run : " + snd.run)
     println("show : " + snd.show)
-    println("=================")
 
 
 

@@ -38,7 +38,9 @@ object Main {
   //The evaluator
   def eval[B](e: Exp, env: String => Expr[Int], fenv: String => Expr[Int => Int], k: Option[Expr[Int]] => Expr[B]): Expr[B] = e match {
     case int(x) => k(Some(x.toExpr))
+
     case Var(s) => k(Some(env(s)))
+
     case App(s, e) =>
       eval(e, env, fenv,
         (r: Option[Expr[Int]]) => r match {
@@ -46,6 +48,7 @@ object Main {
           case _ => k(None)
         }
       )
+
     case Add(e1, e2) =>
       eval(e1, env, fenv,
         (r: Option[Expr[Int]]) => {
@@ -57,6 +60,7 @@ object Main {
           )
         }
       )
+
     case Sub(e1, e2) =>
       eval(e1, env, fenv,
         (r: Option[Expr[Int]]) => {
@@ -68,6 +72,7 @@ object Main {
           )
         }
       )
+
     case Mul(e1, e2) =>
       eval(e1, env, fenv,
         (r: Option[Expr[Int]]) => {
@@ -79,17 +84,19 @@ object Main {
           )
         }
       )
+
     case Div(e1, e2) =>
       eval(e1, env, fenv,
         (r: Option[Expr[Int]]) => {
           eval(e2, env, fenv,
             (s: Option[Expr[Int]]) => (r, s) match {
-              case (Some(x), Some(y)) => '{if(~y == 0) ~k(None) else ~k(Some('{~x / ~y}))}
+              case (Some(x), Some(y)) => '{if(~y == 0) ~k(None) else {val z = ~x / ~y; ~k(Some('{z}))}} //cannot do it like this, it will evaluate k(None) (-> throw Exception) even though it is not needed
               case _ => k(None)
             }
           )
         }
       )
+
     case Ifz(e1, e2, e3) =>
       eval(e1, env, fenv,
         (r: Option[Expr[Int]]) => r match {
@@ -103,7 +110,7 @@ object Main {
     peval_k(p, env, fenv,
       (x: Option[Expr[Int]]) => x match {
         case Some(x) => x
-        case None => throw new IllegalArgumentException
+        case None => throw new IllegalArgumentException //k(None) comes from Div comes here
       })
 
   def peval_k(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int], k: Option[Expr[Int]] => Expr[Int]): Expr[Int] =
@@ -120,21 +127,20 @@ object Main {
 
     //Some examples
 
-    val first = Program(Nil, int(1: Int))
+    val first = Program(Nil, Mul(int(10), int(2)))
     val firstRes = peval(first, env0, fenv0)
     println("=================1")
     println("run : " + firstRes.run)
     println("show : " + firstRes.show)
 
-    /*
-    val a = int(0)
+
+    val a = int(1)
     val b = Add(int(1), Mul(int(2), int(3)))
-    val p = Ifz(a, int(2), b)
-    val snd = eval(b , env0, fenv0)
+    val p = Program(Nil, Ifz(a, int(2), b))
+    val snd = peval(p , env0, fenv0)
     println("=================2")
-    println("run : " + snd.run) //ArrayIndexOutOfBoundsException, snd is already evaluated -> it fails when running (same when I try with factorial)
+    println("run : " + snd.run)
     println("show : " + snd.show)
-    println("=================")
 
 
     val factorial = Program(List(Declaration
@@ -143,12 +149,12 @@ object Main {
                                               Mul(Var("x"),
                                                   (App("fact", Sub(Var("x"), int(1)))))))
                           , Declaration("twoTimesFact", "y", Mul(int(2), App("fact", Var("y"))))),
-                          App("twoTimesFact", int(5)))
+                          App("twoTimesFact", int(10)))
     val res = peval(factorial, env0, fenv0)
     println("=================3")
     println("run : " + res.run)
     println("show : " + res.show)
-    println("=================")*/
+    println("=================")
 
   }
 }
