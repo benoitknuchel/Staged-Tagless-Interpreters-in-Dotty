@@ -1,7 +1,11 @@
 gitignore
 *.class
 *.hasTasty
-simplestagedinterpreter/.idea/
-simplestagedinterpreter/target/
+staged_interpreter/.idea
+staged_interpreter/target/
 binding-time_improvement/.idea/
 binding-time_improvement/target/
+controlled_inlining/.idea/
+controlled_inlining/target/
+tagless_interpreter/.idea/
+tagless_interpreter/target/
