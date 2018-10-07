@@ -1,3 +1,4 @@
+import scala.quoted._
 
 //repr[_] is a wrapper (monad, ...)
 trait Symantics[repr[_]] {
@@ -14,42 +15,68 @@ trait Symantics[repr[_]] {
 }
 
 object Main {
-
+  implicit val toolbox: scala.quoted.Toolbox = dotty.tools.dotc.quoted.Toolbox.make
   //No wrapper
   type Id[A] = A
   val eval: Symantics[Id] = new Symantics[Id] {
-    override def int(x: Int): Id[Int] = x
-    override def bool(b: Boolean): Id[Boolean] = b
+    override def int(x: Int): Int= x
+    override def bool(b: Boolean): Boolean = b
 
-    override def lam[A, B](f: Id[A] => Id[B]): Id[A => B] = f
-    override def app[A, B](f: Id[A => B], arg: Id[A]): Id[B] = f(arg)
+    override def lam[A, B](f: A => B): A => B = f
+    override def app[A, B](f: A => B, arg: A): B = f(arg)
 
-    override def add(x: Id[Int], y: Id[Int]): Id[Int] = x + y
-    override def mul(x: Id[Int], y: Id[Int]): Id[Int] = x * y
-    override def leq(x: Id[Int], y: Id[Int]): Id[Boolean] = x <= y
-    override def if_[A](cond: Id[Boolean], e1: Id[A], e2: Id[A]): Id[A] = if (cond) e1 else e2
+    override def add(x: Int, y: Int): Int = x + y
+    override def mul(x: Int, y: Int): Int = x * y
+    override def leq(x: Int, y: Int): Boolean = x <= y
+    override def if_[A](cond: Boolean, e1: A, e2: A): A = if (cond) e1 else e2
   }
 
+  //staged interpreter
+  type QuotedId[A] = Expr[A]
+  val evalQuoted: Symantics[QuotedId] = new Symantics[QuotedId] {
+    override def int(x: Int): QuotedId[Int] = x.toExpr
+    override def bool(b: Boolean): QuotedId[Boolean] = b.toExpr
+
+    override def lam[A, B](f: QuotedId[A] => QuotedId[B]): QuotedId[A => B] = '{ (x: A) => ~(f('(x))) }
+    override def app[A, B](f: QuotedId[A => B], arg: QuotedId[A]): QuotedId[B] = '{ (~f)(~arg) }
+
+    override def add(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Int] = '{ ~x + ~y }
+    override def mul(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Int] = '{ ~x * ~y }
+    override def leq(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Boolean] = '{ ~x <= ~y }
+    override def if_[A](cond: QuotedId[Boolean], e1: QuotedId[A], e2: QuotedId[A]): QuotedId[A] = '{ if(~cond) ~e1 else ~e2 }
+  }
 
   def main(args: Array[String]): Unit = {
+    import eval._
 
     //(b=b)(true)
-    val t1 = eval.app(eval.lam((b: Boolean) => eval.bool(b)), eval.bool(true))
+    /*
+    val t1 = app(lam((b: Boolean) => bool(b)), bool(true))
     println("======================")
     println("res : " + t1)
-    println("======================")
+    println("======================")*/
 
     //(x*x)(4)
-    val t2 = eval.app(eval.lam((x: Int) => eval.mul(x, x)), eval.int(4))
+
+    val t2 = app(lam((x: Int) => mul(x, x)), int(4))
     println("res : " + t2)
     println("======================")
 
+    /*
     //(if(x <= 1) true else false)(1)
-    val t3 = eval.app(
-      eval.lam((x: Int) => eval.if_(eval.leq(x, eval.int(1)), eval.bool(true), eval.bool(false))),
-      eval.int(1))
-    println("res : " + t3)
+    val t3 = app(
+      lam((x: Int) => if_(leq(x, int(1)), bool(true), bool(false))),
+      int(1))
+    println("res : " + t3.run)
     println("======================")
+
+    //(if(n <= 2) n else n*(n-1))(5)
+    val t4 = app(
+      lam((n: Int) => if_(leq(n, int(2)), n, mul(n, add(n, -1)))),
+        int(5)
+    )
+    println("res : " + t4)
+    println("======================")*/
 
   }
 
