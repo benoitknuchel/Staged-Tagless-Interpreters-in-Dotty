@@ -20,7 +20,7 @@ enum Prog {
 }
 
 object Main {
-  implicit val toolbox: scala.quoted.Toolbox = dotty.tools.dotc.quoted.Toolbox.make
+  implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
   import Exp._
   import Def._
   import Prog._
@@ -110,7 +110,7 @@ object Main {
     peval_k(p, env, fenv,
       (x: Option[Expr[Int]]) => x match {
         case Some(x) => x
-        case None => throw new IllegalArgumentException //k(None) comes from Div comes here
+        case None => Int.MaxValue.toExpr //throw new IllegalArgumentException //k(None) comes from Div comes here
       })
 
   def peval_k(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int => Int], k: Option[Expr[Int]] => Expr[Int]): Expr[Int] =
@@ -127,11 +127,11 @@ object Main {
 
     //Some examples
 
-    val first = Program(Nil, Mul(int(10), int(2)))
+    val first = Program(Nil, Div(int(10), int(2)))
     val firstRes = peval(first, env0, fenv0)
     println("=================1")
-    println("run : " + firstRes.run)
     println("show : " + firstRes.show)
+    println("run : " + firstRes.run)
 
 
     val a = int(1)
@@ -139,8 +139,8 @@ object Main {
     val p = Program(Nil, Ifz(a, int(2), b))
     val snd = peval(p , env0, fenv0)
     println("=================2")
-    println("run : " + snd.run)
     println("show : " + snd.show)
+    println("run : " + snd.run)
 
 
     val factorial = Program(List(Declaration
@@ -152,8 +152,8 @@ object Main {
                           App("twoTimesFact", int(10)))
     val res = peval(factorial, env0, fenv0)
     println("=================3")
-    println("run : " + res.run)
     println("show : " + res.show)
+    println("run : " + res.run)
     println("=================")
 
   }
