@@ -1,12 +1,13 @@
 import scala.quoted._
 
-//repr[_] is a wrapper (monad, ...)
+//repr[_] is a wrapper
 trait Symantics[repr[_]] {
   def int(x: Int): repr[Int]
   def bool(b: Boolean): repr[Boolean]
 
-  def lam[A, B](f: repr[A] => repr[B]): repr[A => B]
+  def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
   def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
+  def fix[A, B](f: repr[A => B] => repr[A => B]): repr[A => B]
 
   def add(x: repr[Int], y: repr[Int]): repr[Int]
   def mul(x: repr[Int], y: repr[Int]): repr[Int]
@@ -15,15 +16,17 @@ trait Symantics[repr[_]] {
 }
 
 object Main {
-  implicit val toolbox: scala.quoted.Toolbox = dotty.tools.dotc.quoted.Toolbox.make
+  implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
+
   //No wrapper
   type Id[A] = A
   val eval: Symantics[Id] = new Symantics[Id] {
     override def int(x: Int): Int= x
     override def bool(b: Boolean): Boolean = b
 
-    override def lam[A, B](f: A => B): A => B = f
+    override def lam[A: Type, B: Type](f: A => B): A => B = f
     override def app[A, B](f: A => B, arg: A): B = f(arg)
+    override def fix[A, B](f: (A => B) => (A => B)): A => B = f(fix(f))(_)
 
     override def add(x: Int, y: Int): Int = x + y
     override def mul(x: Int, y: Int): Int = x * y
@@ -32,105 +35,88 @@ object Main {
   }
 
   //staged interpreter
-  type QuotedId[A] = Expr[A]
-  val evalQuoted: Symantics[QuotedId] = new Symantics[QuotedId] {
-    override def int(x: Int): QuotedId[Int] = x.toExpr
-    override def bool(b: Boolean): QuotedId[Boolean] = b.toExpr
+  val evalQuoted: Symantics[Expr] = new Symantics[Expr] {
+    override def int(x: Int): Expr[Int] = x.toExpr
+    override def bool(b: Boolean): Expr[Boolean] = b.toExpr
 
-    override def lam[A, B](f: QuotedId[A] => QuotedId[B]): QuotedId[A => B] = '{ (x: A) => ~(f('(x))) }
-    override def app[A, B](f: QuotedId[A => B], arg: QuotedId[A]): QuotedId[B] = '{ (~f)(~arg) }
+    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] = '{ (x: A) => ~(f('(x))) }
+    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) } //use .asFunction()
+    override def fix[A, B](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = f(fix(f))
 
-    override def add(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Int] = '{ ~x + ~y }
-    override def mul(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Int] = '{ ~x * ~y }
-    override def leq(x: QuotedId[Int], y: QuotedId[Int]): QuotedId[Boolean] = '{ ~x <= ~y }
-    override def if_[A](cond: QuotedId[Boolean], e1: QuotedId[A], e2: QuotedId[A]): QuotedId[A] = '{ if(~cond) ~e1 else ~e2 }
+    override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
+    override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
+    override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
+    override def if_[A](cond: Expr[Boolean], e1: Expr[A], e2: Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
   }
 
   def main(args: Array[String]): Unit = {
+
+    // TEST STAGED
+    import evalQuoted._
+
+    //(b=b)(true)
+    val t1 = app(lam((b: Expr[Boolean]) => b), bool(true))
+    println("======================")
+    println("show : " + t1.show)
+    println("res : " + t1.run)
+    println("======================")
+
+    //(x*x)(4)
+    val t2 = app(lam((x: Expr[Int]) => mul(x, x)), int(4))
+    println("show : " + t2.show)
+    println("res : " + t2.run)
+    println("======================")
+
+    //(if(x <= 1) true else false)(1)
+    val t3 = app(
+      lam((x: Expr[Int]) => if_(leq(x, int(1)), bool(true), bool(false))),
+      int(1))
+    println("show : " + t3.show)
+    println("res : " + t3.run)
+    println("======================")
+
+    //factorial(5),
+    //TODO: make it work, fix: Expr[A => B] => Expr[A => B]
+    //val t4 = app(fix((f: Expr[Int => Int]) => '{ (n: Int) => if_(leq(n.toExpr, int(1)), n.toExpr, mul(f(add(n.toExpr, int(-1))), n.toExpr)) }), int(5))
+    //val t4 = app(fix((f: Int => Int) => (n: Int) => if(leq(n, int(1))) n else mul(f(add(n, -1)), n)), int(5))
+    //println("show : " + t4.show)
+    //println("res : " + t4.run)
+    //println("======================")
+
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+
+    //TEST ID
+    /*
     import eval._
 
     //(b=b)(true)
-    /*
-    val t1 = app(lam((b: Boolean) => bool(b)), bool(true))
+    val t1 = app(lam((b: Boolean) => b), bool(true))
     println("======================")
     println("res : " + t1)
-    println("======================")*/
+    println("======================")
 
     //(x*x)(4)
-
     val t2 = app(lam((x: Int) => mul(x, x)), int(4))
     println("res : " + t2)
     println("======================")
 
-    /*
-    //(if(x <= 1) true else false)(1)
+    //(if(x <= 1) 0 else (x-1)*(3*4))(2)
     val t3 = app(
-      lam((x: Int) => if_(leq(x, int(1)), bool(true), bool(false))),
-      int(1))
-    println("res : " + t3.run)
+      lam((x: Int) => if_(leq(x, int(1)), int(0), mul(add(x, -1), mul(3, 4)))),
+      int(2))
+    println("res : " + t3)
     println("======================")
 
-    //(if(n <= 2) n else n*(n-1))(5)
-    val t4 = app(
-      lam((n: Int) => if_(leq(n, int(2)), n, mul(n, add(n, -1)))),
-        int(5)
-    )
+    TODO: fix the StackOverflowError coming from t4 (hypothesis : 'if_' isn't recognised as a stop for recursion)
+    //factorial(5) //StackOverFlowError when using if_, does the compiler see an infinite loop ?
+    //val t4 = app(fix((f: Int => Int) => (n: Int) => if_(leq(n, int(1)), n, mul(f(add(n, -1)), n))), int(5)) //this doesn't work
+    val t4 = app(fix((f: Int => Int) => (n: Int) => if(leq(n, int(1))) n else mul(f(add(n, -1)), n)), int(5)) //this works
     println("res : " + t4)
-    println("======================")*/
+    println("======================")
+    */
 
   }
 
 }
-
-/*
-enum exp{
-  case b(bv: Boolean)
-  case lam(f: exp => exp)
-  case app(f: exp => exp, x: exp)
-}*/
-
-/*
-enum Symantics(repr: Any => Any){
-  def int(x: Int): repr(Int)
-  def bool(b: Boolean): repr(Boolean)
-
-  def lam[A, B](f: repr(A)] => repr(B): rep(A => B)
-  def app[A, B](f: repr(A => B), arg: repr(A)): repr(B)
-  def fix[A](f: repr(A => A)): repr(A)
-
-  def add(x: repr(Int), y: repr(Int)): repr(Int)
-  def mul(x: repr(Int), y: repr(Int)): repr(Int)
-  def leq(x: repr(Int), y: repr(Int)): repr(Boolean)
-  def if_[A](cond: repr(Boolean), e1: repr(A), e2: repr(A)): repr(A)
-}*/
-
-/*
-enum Symantics[repr[_]] {
-  def int(x: Int): repr[Int]// = x
-  def bool(b: Boolean): repr[Boolean]// = b
-
-  def lam[A, B](f: repr[A] => repr[B]): repr[A => B]// = f
-  def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]// = f(arg)
-
-  def add(x: repr[Int], y: repr[Int]): repr[Int]// = x + y
-  def mul(x: repr[Int], y: repr[Int]): repr[Int]// = x * y
-  def leq(x: repr[Int], y: repr[Int]): repr[Boolean]// = x <= y
-  def if_[A](cond: repr[Boolean], e1: repr[A], e2: repr[A]): repr[A]// = if (cond) e1 else e2
-
-  case intSymantics()
-}*/
-
-/*
-implicit object intSymantics extends Symantics[Id] {
-  override def int(x: Int): Id[Int] = x
-  override def bool(b: Boolean): Id[Boolean] = b
-
-  override def lam[A, B](f: Id[A] => Id[B]): Id[A => B] = f
-  override def app[A, B](f: Id[A => B], arg: Id[A]): Id[B] = f(arg)
-
-  override def add(x: Id[Int], y: Id[Int]): Id[Int] = x + y
-  override def mul(x: Id[Int], y: Id[Int]): Id[Int] = x * y
-  override def leq(x: Id[Int], y: Id[Int]): Id[Boolean] = x <= y
-  override def if_[A](cond: Id[Boolean], e1: Id[A], e2: Id[A]): Id[A] = if (cond) e1 else e2
-}*/
-
