@@ -118,7 +118,7 @@ object Main {
       case Program(Nil, e) => eval(e, env, fenv, k)
       //recursively eval each declaration
       case Program(Declaration(s1, s2, e1)::tl, e) => '{
-        lazy val f: Int => Int = (x: Int) => ~eval(e1, ext(env, s2, '(x)), ext(fenv, s1, '(f)), k)
+        def f(x: Int): Int = ~eval(e1, ext(env, s2, '(x)), ext(fenv, s1, '(f)), k)
         ~peval_k(Program(tl, e), env, ext(fenv, s1, '(f)), k)
       }
     }
