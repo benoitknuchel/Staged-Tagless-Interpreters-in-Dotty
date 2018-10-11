@@ -20,14 +20,14 @@ enum Prog {
 }
 
 object Main {
-  implicit val toolbox: scala.quoted.Toolbox = dotty.tools.dotc.quoted.Toolbox.make
+  implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
   import Exp._
   import Def._
   import Prog._
 
-  //Environments bases, empty -> None
-  def env0(s: String): Expr[Option[Int]] = '(None)
-  def fenv0(s: String): Expr[Int => Option[Int]] = '((x: Int) => None)
+  //Environments bases, empty -> NoSuchElementException
+  def env0[A](s: String): A = throw new NoSuchElementException
+  def fenv0[A](s: String): A = throw new NoSuchElementException
 
   //[A]: Expr[Option[Int]] or Expr[Int => Option[Int]]
   def ext[A](env: (String => A), s: String, v: A): String => A = {
@@ -36,124 +36,135 @@ object Main {
 
 
   //The evaluator
-  def eval(e: Exp, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = e match {
-    case int(x) => '(Some(~x.toExpr): Option[Int])
-    case Var(s) => '(~env(s))
-    case App(s, e) => '{
-      val a = ~eval(e, env, fenv)
-      if(a.nonEmpty) ~(fenv(s)('(a.get)))
-      else None
-      /*
-      ~eval(e, env, fenv) match {
-        case Some(x) => (~fenv(s))(x)
-        case _ => None
-      }*/
-    }
-    case Add(e1, e2) => '{
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get + b.get)
-      else None
-      /*
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x+y): Option[Int]
-        case _ => None: Option[Int]
-      }*/
-    }
-    case Sub(e1, e2) => '{
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get - b.get)
-      else None
-      /*
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x-y)
-        case _ => None
-      }*/
-    }
-    case Mul(e1, e2) => '{
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get * b.get)
-      else None
-      /*
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => Some(x*y)
-        case _ => None
-      }*/
-    }
-    case Div(e1, e2) => '{
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty && b.get != 0) Some(a.get / b.get)
-      else None
-      /*
-      (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
-        case (Some(x), Some(y)) => if(y != 0) Some(x/y) else None
-        case _ => None
-      }*/
-    }
-    case Ifz(e1, e2, e3) => '{
-      val a = ~eval(e1, env, fenv)
-      if(a.nonEmpty) {
-        if (a.get == 0) ~eval(e2, env, fenv)
-        else ~eval(e3, env, fenv)
-      }else {
-        None
-      }
-    /*
-      ~eval(e1, env, fenv) match {
-        case Some(x) => if(x == 0) ~eval(e2, env, fenv) else ~eval(e3, env, fenv)
-        case _ => None
-      }*/
-    }
+  def eval[B](e: Exp, env: String => Expr[Int], fenv: String => Expr[Int] => Expr[Int], k: Option[Expr[Int]] => Expr[B]): Expr[B] = e match {
+    case int(x) => k(Some(x.toExpr))
+
+    case Var(s) => k(Some(env(s)))
+
+    case App(s, e) =>
+      eval(e, env, fenv,
+        (r: Option[Expr[Int]]) => r match {
+          case Some(x) => k(Some((fenv(s))(x)))
+          case _ => k(None)
+        }
+      )
+
+    case Add(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x + ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+
+    case Sub(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x - ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+
+    case Mul(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => k(Some('{~x * ~y}))
+              case _ => k(None)
+            }
+          )
+        }
+      )
+
+    case Div(e1, e2) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => {
+          eval(e2, env, fenv,
+            (s: Option[Expr[Int]]) => (r, s) match {
+              case (Some(x), Some(y)) => '{if(~y == 0) ~k(None) else {val z = ~x / ~y; ~k(Some('{z}))}} //cannot do it like this, it will evaluate k(None) (-> throw Exception) even though it is not needed
+              case _ => k(None)
+            }
+          )
+        }
+      )
+
+    case Ifz(e1, e2, e3) =>
+      eval(e1, env, fenv,
+        (r: Option[Expr[Int]]) => r match {
+          case Some(x) => '{if(~x == 0) ~eval(e2, env, fenv, k) else ~eval(e3, env, fenv, k)}
+          case _ => k(None)
+        }
+      )
   }
+
+  def peval(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int] => Expr[Int]): Expr[Int] =
+    peval_k(p, env, fenv,
+      (x: Option[Expr[Int]]) => x match {
+        case Some(x) => x
+        case None => Int.MaxValue.toExpr //throw new IllegalArgumentException //k(None) comes from Div comes here
+      })
+
+  def peval_k(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int] => Expr[Int], k: Option[Expr[Int]] => Expr[Int]): Expr[Int] =
+    p match {
+      case Program(Nil, e) => eval(e, env, fenv, k)
+      //recursively eval each declaration
+      case Program(Declaration(s1, s2, e1)::tl, e) => '{
+        def f(x: Int): Int = ~{
+            def body(cf: Expr[Int] => Expr[Int], y: Expr[Int]): Expr[Int] = eval(e1, ext(env, s2, y), ext(fenv, s1, cf), k)
+            //repeat(1, body((y: Expr[Int]) => '(f(~y)), x.toExpr))
+            //TODO: correct this, repeat(Int, Expr[Int] => Expr[Int]) but here called with (Int, Expr[Int]), but repeat must only return an Expr[Int] to typecheck with f(),
+            //TODO: "repeat: Int => (A => A) => A => A" but what is this third parameter ?, or is it "repeat: Int => (A => A) => (A => A)" but unlikely bc repeat must return Expr[Int]
+            repeat(1, /* (a: Expr[Int]) => */ body((y: Expr[Int]) => '(f(~y)), x.toExpr))
+            //body(body((y: Expr[Int]) => '(f(~y)), x.toExpr))
+            //repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), a)/*body((y: Expr[Int]) => '(f(~y)))*/, x.toExpr)
+        }
+        ~peval_k(Program(tl, e), env, ext(fenv, s1, (y: Expr[Int]) => '(f(~y))), k)
+      }
+    }
 
   def repeat[A](n: Int, f: A => A): A => A =
-    if (n == 0) f
-    else (x: Int) => f(repeat(n-1, f(x)))
-
-  def peval(p: Prog, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = p match {
-    case Program(Nil, e) => eval(e, env, fenv)
-    //recursively eval each declaration
-    case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      lazy val f: Int => Option[Int] = (x: Int) => ~eval(e1, ext(env, s2, '(Some(x))), ext(fenv, s1, '(f)))
-      ~peval(Program(tl, e), env, ext(fenv, s1, '(f)))
-    }
-  }
-
+    if(n == 0) f else (x: A) => f(repeat(n-1, f)(x))
 
   def main(args: Array[String]): Unit = {
 
     //Some examples
-    val first = Program(Nil, Div(int(4), int(2)))
+
+    val first = Program(Nil, Add(int(10), int(2)))
     val firstRes = peval(first, env0, fenv0)
     println("=================1")
-    println("run : " + firstRes.run)
     println("show : " + firstRes.show)
+    println("run : " + firstRes.run)
 
 
     val a = int(1)
     val b = Add(int(1), Mul(int(2), int(3)))
     val p = Program(Nil, Ifz(a, int(2), b))
-    val snd = peval(p, env0, fenv0)
+    val snd = peval(p , env0, fenv0)
     println("=================2")
-    println("run : " + snd.run)
     println("show : " + snd.show)
-
+    println("run : " + snd.run)
 
 
     val factorial = Program(List(Declaration
-                            ("fact", "x", Ifz(Var("x"),
-                                              int(1),
-                                              Mul(Var("x"),
-                                                  (App("fact", Sub(Var("x"), int(1)))))))
-                          , Declaration("twoTimesFact", "y", Mul(int(2), App("fact", Var("y"))))),
-                          App("twoTimesFact", int(5)))
+    ("fact", "x", Ifz(Var("x"),
+      int(1),
+      Mul(Var("x"),
+        (App("fact", Sub(Var("x"), int(1)))))))
+      , Declaration("twoTimesFact", "y", Mul(int(2), App("fact", Var("y"))))),
+      App("twoTimesFact", int(10)))
     val res = peval(factorial, env0, fenv0)
     println("=================3")
-    println("run : " + res.run)
     println("show : " + res.show)
+    println("run : " + res.run)
     println("=================")
 
   }
