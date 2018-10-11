@@ -120,7 +120,7 @@ object Main {
     case Program(Nil, e) => eval(e, env, fenv)
     //recursively eval each declaration
     case Program(Declaration(s1, s2, e1)::tl, e) => '{
-      lazy val f: Int => Option[Int] = (x: Int) => ~eval(e1, ext(env, s2, '(Some(x))), ext(fenv, s1, '(f)))
+      def f(x: Int): Option[Int] = ~eval(e1, ext(env, s2, '(Some(x))), ext(fenv, s1, '(f)))
       ~peval(Program(tl, e), env, ext(fenv, s1, '(f)))
     }
   }
