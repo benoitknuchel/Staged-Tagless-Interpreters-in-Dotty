@@ -18,7 +18,7 @@ trait Symantics[repr[_]] {
 object Main {
   implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
 
-  //No wrapper
+  //Tagless interpreter, no wrapper
   type Id[A] = A
   val eval: Symantics[Id] = new Symantics[Id] {
     override def int(x: Int): Int= x
@@ -34,12 +34,13 @@ object Main {
     override def if_[A](cond: Boolean, e1: A, e2: A): A = if (cond) e1 else e2
   }
 
-  //staged interpreter
+
+  //Staged tagless interpreter
   val evalQuoted: Symantics[Expr] = new Symantics[Expr] {
     override def int(x: Int): Expr[Int] = x.toExpr
     override def bool(b: Boolean): Expr[Boolean] = b.toExpr
 
-    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] = '{ (x: A) => ~(f('(x))) }
+    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) } // = f.reflect() as said in "A Practical Unification of macros Multi-stage Programming and Macros" 6) Staged Lambdas
     override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) } //use .asFunction()
     override def fix[A, B](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = f(fix(f))
 
@@ -48,6 +49,7 @@ object Main {
     override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
     override def if_[A](cond: Expr[Boolean], e1: Expr[A], e2: Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
   }
+
 
   def main(args: Array[String]): Unit = {
 
