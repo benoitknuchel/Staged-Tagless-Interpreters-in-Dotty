@@ -7,12 +7,12 @@ trait Symantics[repr[_]] {
 
   def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
   def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
-  def fix[A, B](f: repr[A => B] => repr[A => B]): repr[A => B]
+  def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
 
   def add(x: repr[Int], y: repr[Int]): repr[Int]
   def mul(x: repr[Int], y: repr[Int]): repr[Int]
   def leq(x: repr[Int], y: repr[Int]): repr[Boolean]
-  def if_[A](cond: repr[Boolean], e1: repr[A], e2: repr[A]): repr[A]
+  def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
 }
 
 trait SymanticsD[repr[_, _]] {
@@ -26,7 +26,7 @@ trait SymanticsD[repr[_, _]] {
   def add(x: repr[Int, Int], y: repr[Int, Int]): repr[Int, Int]
   def mul(x: repr[Int, Int], y: repr[Int, Int]): repr[Int, Int]
   def leq(x: repr[Int, Int], y: repr[Int, Int]): repr[Boolean, Boolean]
-  def if_[A](cond: repr[Boolean, Boolean], e1: repr[A, A], e2: repr[A, A]): repr[A, A]
+  def if_[A](cond: repr[Boolean, Boolean], e1: => repr[A, A], e2: => repr[A, A]): repr[A, A]
 }
 
 object Main {
@@ -35,17 +35,17 @@ object Main {
   //Tagless interpreter, no wrapper
   type Id[A] = A
   val eval: Symantics[Id] = new Symantics[Id] {
-    override def int(x: Int): Int = x
+    override def int(x: Int): Int= x
     override def bool(b: Boolean): Boolean = b
 
     override def lam[A: Type, B: Type](f: A => B): A => B = f
     override def app[A, B](f: A => B, arg: A): B = f(arg)
-    override def fix[A, B](f: (A => B) => (A => B)): A => B = f(fix(f))(_)
+    override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A)
 
     override def add(x: Int, y: Int): Int = x + y
     override def mul(x: Int, y: Int): Int = x * y
     override def leq(x: Int, y: Int): Boolean = x <= y
-    override def if_[A](cond: Boolean, e1: A, e2: A): A = if (cond) e1 else e2
+    override def if_[A](cond: Boolean, e1: => A, e2: => A): A = if (cond) e1 else e2
   }
 
 
@@ -54,14 +54,14 @@ object Main {
     override def int(x: Int): Expr[Int] = x.toExpr
     override def bool(b: Boolean): Expr[Boolean] = b.toExpr
 
-    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~f('(x)) } // = f.reflect() as said in "A Practical Unification of macros Multi-stage Programming and Macros" 6) Staged Lambdas
-    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) } //use .asFunction()
-    override def fix[A, B](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = f(fix(f))
+    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
+    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg)
+    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) }
 
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
     override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
     override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
-    override def if_[A](cond: Expr[Boolean], e1: Expr[A], e2: Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
+    override def if_[A](cond: Expr[Boolean], e1: => Expr[A], e2: => Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
   }
 
 
@@ -105,7 +105,7 @@ object Main {
       case (Some(a), Some(b)) => bool(eval.leq(a, b)) //if(a <= b) (Some(true), (true).toExpr) else (Some(false), (false.toExpr))
       case _ => pdyn(evalQuoted.leq(abstr(x), abstr(y)))
     }
-    override def if_[A](cond: StatDyn[Boolean, Boolean], e1: StatDyn[A, A], e2: StatDyn[A, A]): StatDyn[A, A] = cond._1 match {
+    override def if_[A](cond: StatDyn[Boolean, Boolean], e1: => StatDyn[A, A], e2: => StatDyn[A, A]): StatDyn[A, A] = cond._1 match {
       case Some(b) => if(b) e1 else e2
       case _ => pdyn(evalQuoted.if_(abstr(cond), abstr(e1), abstr(e2)))
     }
