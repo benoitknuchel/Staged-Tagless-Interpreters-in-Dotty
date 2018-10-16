@@ -35,40 +35,24 @@ object Main {
     y: String => if(s == y) v else env(y)
   }
 
-  //HAVE TO CAST :Option[Int] or I get an ArrayOutOfBoundsException but still the output is weird... Correct but weird (nul...)
+  //HAVE TO CAST :Option[Int] or I get an ArrayOutOfBoundsException but still the output is weird... Correct but weird (null ...)
   //The evaluator
   def eval(e: Exp, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = e match {
     case int(x) => '(Some(~x.toExpr))
     case Var(s) => '(~env(s))
     case App(s, e) => '{
-      /*
-      val a = ~eval(e, env, fenv)
-      if(a.nonEmpty) (~fenv(s))(a.get)
-      else None*/
-
       ~eval(e, env, fenv) match {
         case Some(x) => (~fenv(s))(x) : Option[Int]
         case _ => None : Option[Int]
       }
     }
     case Add(e1, e2) => '{
-      /*
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get + b.get)
-      else None*/
-
       (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
         case (Some(x), Some(y)) => Some(x+y) : Option[Int]
         case _ => None : Option[Int]
       }
     }
     case Sub(e1, e2) => '{
-      /*
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get - b.get)
-      else None*/
 
       (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
         case (Some(x), Some(y)) => Some(x-y) : Option[Int]
@@ -76,11 +60,6 @@ object Main {
       }
     }
     case Mul(e1, e2) => '{
-      /*
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty) Some(a.get * b.get)
-      else None*/
 
       (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
         case (Some(x), Some(y)) => Some(x*y) : Option[Int]
@@ -88,11 +67,6 @@ object Main {
       }
     }
     case Div(e1, e2) => '{
-      /*
-      val a = ~eval(e1, env, fenv)
-      val b = ~eval(e2, env, fenv)
-      if(a.nonEmpty && b.nonEmpty && b.get != 0) Some(a.get / b.get)
-      else None*/
 
       (~eval(e1, env, fenv), ~eval(e2, env, fenv)) match {
         case (Some(x), Some(y)) => if(y != 0) Some(x/y) : Option[Int] else None : Option[Int]
@@ -100,15 +74,6 @@ object Main {
       }
     }
     case Ifz(e1, e2, e3) => '{
-      /*
-      val a = ~eval(e1, env, fenv)
-      if(a.nonEmpty) {
-        if (a.get == 0) ~eval(e2, env, fenv)
-        else ~eval(e3, env, fenv)
-      }else {
-        None
-      }*/
-
       ~eval(e1, env, fenv) match {
         case Some(x) => if(x == 0) ~eval(e2, env, fenv) : Option[Int] else ~eval(e3, env, fenv) : Option[Int]
         case _ => None : Option[Int]
