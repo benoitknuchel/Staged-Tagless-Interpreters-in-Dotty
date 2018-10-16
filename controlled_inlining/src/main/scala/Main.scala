@@ -120,12 +120,7 @@ object Main {
       case Program(Declaration(s1, s2, e1)::tl, e) => '{
         def f(x: Int): Int = ~{
             def body(cf: Expr[Int] => Expr[Int], y: Expr[Int]): Expr[Int] = eval(e1, ext(env, s2, y), ext(fenv, s1, cf), k)
-            //repeat(1, body((y: Expr[Int]) => '(f(~y)), x.toExpr))
-            //TODO: correct this, repeat(Int, Expr[Int] => Expr[Int]) but here called with (Int, Expr[Int]), but repeat must only return an Expr[Int] to typecheck with f(),
-            //TODO: "repeat: Int => (A => A) => A => A" but what is this third parameter ?, or is it "repeat: Int => (A => A) => (A => A)" but unlikely bc repeat must return Expr[Int]
-            repeat(1, /* (a: Expr[Int]) => */ body((y: Expr[Int]) => '(f(~y)), x.toExpr))
-            //body(body((y: Expr[Int]) => '(f(~y)), x.toExpr))
-            //repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), a)/*body((y: Expr[Int]) => '(f(~y)))*/, x.toExpr)
+            repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), '(x)))(1.toExpr) //TODO: is this '(1.toExpr)' legal ?
         }
         ~peval_k(Program(tl, e), env, ext(fenv, s1, (y: Expr[Int]) => '(f(~y))), k)
       }
@@ -138,7 +133,7 @@ object Main {
 
     //Some examples
 
-    val first = Program(Nil, Add(int(10), int(2)))
+    val first = Program(Nil, Div(int(10), int(2)))
     val firstRes = peval(first, env0, fenv0)
     println("=================1")
     println("show : " + firstRes.show)
