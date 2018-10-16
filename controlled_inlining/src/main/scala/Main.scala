@@ -120,7 +120,7 @@ object Main {
       case Program(Declaration(s1, s2, e1)::tl, e) => '{
         def f(x: Int): Int = ~{
             def body(cf: Expr[Int] => Expr[Int], y: Expr[Int]): Expr[Int] = eval(e1, ext(env, s2, y), ext(fenv, s1, cf), k)
-            repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), '(x)))(1.toExpr) //TODO: is this '(1.toExpr)' legal ?
+            repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), '(x)))(1.toExpr) //TODO: is this '(1.toExpr)' legal ?, I'd say yes because it seems to be never used, just here to typecheck
         }
         ~peval_k(Program(tl, e), env, ext(fenv, s1, (y: Expr[Int]) => '(f(~y))), k)
       }
