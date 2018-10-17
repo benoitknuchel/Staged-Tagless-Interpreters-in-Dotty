@@ -12,7 +12,7 @@ trait Symantics[repr[_]] {
   def add(x: repr[Int], y: repr[Int]): repr[Int]
   def mul(x: repr[Int], y: repr[Int]): repr[Int]
   def leq(x: repr[Int], y: repr[Int]): repr[Boolean]
-  def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
+  def if_[A](cond: repr[Boolean], e1: => repr[Unit => A], e2: => repr[Unit => A]): repr[A]
 }
 
 object Main {
@@ -48,7 +48,7 @@ object Main {
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
     override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
     override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
-    override def if_[A](cond: Expr[Boolean], e1: => Expr[A], e2: => Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
+    override def if_[A](cond: Expr[Boolean], e1: Expr[Unit => A], e2: Expr[Unit => A]): Expr[A] = '{ if(~cond) ~(e1()) else ~(e2()) }
   }
 
 
@@ -79,14 +79,12 @@ object Main {
     println("======================")
 
     //factorial(5),
-    //TODO: it does typecheck but PCP not checked with n
-    //val t4 = app(fix((f: Int => Int) => (n: Int) => if_(leq(n, int(1)), n, mul(f(add(n, -1)), n))), int(5))
-    //val t4 = app(fix((f: Expr[Int => Int]) =>
-    //                    '{ (n: Int) => ~if_(leq(n.toExpr, int(1)), n.toExpr, mul(f(add(n.toExpr, int(-1))), n.toExpr)) }),
-    //        int(5))
-    //println("show : " + t4.show)
-    //println("res : " + t4.run)
-    //println("======================")
+    val t4 = app(fix((f: Expr[Int => Int]) =>
+                        '{ (n: Int) => ~if_(leq('(n), int(1)), '((u: Unit) => n), '((u: Unit) => mul(f(add('(n), int(-1))), '(n)))) }),
+            int(5))
+    println("show : " + t4.show)
+    println("res : " + t4.run)
+    println("======================")
 
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
