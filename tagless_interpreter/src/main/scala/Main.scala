@@ -49,6 +49,7 @@ object Main {
 
     override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
     override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
+    //in the paper : let fix f = .<let rec self n = .~(f .<self>.) n in self>.
     override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = lam((x: Expr[A]) => f(fix(f))(x)) //'{ (~f(fix(f)))(_: A) }
 
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
