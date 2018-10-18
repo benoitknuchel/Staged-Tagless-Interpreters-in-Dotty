@@ -7,7 +7,7 @@ trait Symantics[repr[_]] {
 
   def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
   def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
-  def fix[A: Type, B: Type](f: => (repr[A => B] => repr[A => B])): repr[A => B]
+  def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
   //tried fix(f: => (...)) but it doesn't change anything
 
   def add(x: repr[Int], y: repr[Int]): repr[Int]
@@ -16,6 +16,7 @@ trait Symantics[repr[_]] {
   def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
   // 1) def if_[A](cond: repr[Boolean], e1: Unit => repr[A], e2: Unit => repr[A]): repr[A]
   // 2) def if_[A](cond: repr[Boolean], e1: repr[Unit => A], e2: repr[Unit => A]): repr[A]
+  // 3) I used the real if statement
   // How could I splice the Expr[] of e1 and e2 but not evaluate them, how to keep them as CBN ?
 
 }
@@ -31,7 +32,7 @@ object Main {
 
     override def lam[A: Type, B: Type](f: A => B): A => B = f
     override def app[A, B](f: A => B, arg: A): B = f(arg)
-    override def fix[A: Type, B: Type](f: => ((A => B) => (A => B))): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
+    override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
 
     override def add(x: Int, y: Int): Int = x + y
     override def mul(x: Int, y: Int): Int = x * y
@@ -48,8 +49,7 @@ object Main {
 
     override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
     override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
-    override def fix[A: Type, B: Type](f: => (Expr[A => B] => Expr[A => B])): Expr[A => B] = '{ (~f(fix(f)))(_: A) } // '{ (x: A) => (~f(fix(f)))(x) }
-
+    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = lam((x: Expr[A]) => f(fix(f))(x)) //'{ (~f(fix(f)))(_: A) }
 
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
     override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
@@ -62,8 +62,7 @@ object Main {
     // 2) if_[A](cond: Expr[Boolean], e1: Expr[Unit => A], e2: => Expr[Unit => A]): Expr[A] = '{ if(~cond) (~e1)(0) else (~e2)(0) }
     //      I can't do (~e1)() because there is a missing argument
     //      I can give it a dummy argument (~e1)(0) but I'd have to change most of the functions to take "Unit => ..." as arguments so it's not a good solution
-    // I can't do "e2.show" because it'll throw an ArrayOutOfBoundsexception
-    // I can't do "e2.run", it just doesn't print anything
+    // I wanted to see e2 in "if_" so I used "e2.show" but it threw an ArrayOutOfBoundsexception
   }
 
 
@@ -98,14 +97,22 @@ object Main {
 
     //factorial(5),
     val t4 = app(fix((f: Expr[Int => Int]) =>
-              '{ (n: Int) => ~if_(leq('(n), int(1)), '(n), mul(f(add('(n), int(-1))), '(n))) }),
+              '{ (n: Int) => ~if_(leq('(n), int(1)), '(n), mul(f(add('(n), int(-1))), '(n))) }), //same as t5: 'lam( (n: Expr[Int]) => if_(leq(n, int(1)), n, mul(f(add(n, int(-1))), n)))'
               // 1) '{ (n: Int) => ~if_(leq('(n), int(1)), (u: Unit) => '(n), (u: Unit) => mul(f(add('(n), int(-1))), '(n))) }),
               // 2) too ugly to print there
+              // 3) with the real if-statement : '{ (n: Int) => if(n <= 1) n else ~mul('(n), f(add('(n), int(-1)))) }), still got the error ---> more likely that the problem comes from "fix"
               int(5))
     println("show : " + t4.show)
     println("res : " + t4.run)
     println("======================")
 
+    /** t4 = t5
+    val t5 = app(fix((f: Expr[Int => Int]) =>
+            lam( (n: Expr[Int]) => if_(leq(n, int(1)), n, mul(f(add(n, int(-1))), n)))),
+            int(5))
+    println("show : " + t5.show)
+    println("res : " + t5.run)
+    println("======================")*/
 
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
@@ -134,7 +141,9 @@ object Main {
     println("======================")
 
     //factorial(5)
-    val t4 = app(fix((f: Int => Int) => (n: Int) => if_(leq(n, int(1)), n, mul(f(add(n, -1)), n))), int(5))
+    val t4 = app(fix((f: Int => Int) =>
+            lam((n: Int) => if_(leq(n, int(1)), n, mul(f(add(n, -1)), n)))),
+            int(5))
     println("res : " + t4)
     println("======================")*/
 
