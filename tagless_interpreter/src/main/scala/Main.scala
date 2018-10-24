@@ -8,17 +8,11 @@ trait Symantics[repr[_]] {
   def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
   def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
   def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
-  //tried fix(f: => (...)) but it doesn't change anything
 
   def add(x: repr[Int], y: repr[Int]): repr[Int]
   def mul(x: repr[Int], y: repr[Int]): repr[Int]
   def leq(x: repr[Int], y: repr[Int]): repr[Boolean]
   def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
-  // 1) def if_[A](cond: repr[Boolean], e1: Unit => repr[A], e2: Unit => repr[A]): repr[A]
-  // 2) def if_[A](cond: repr[Boolean], e1: repr[Unit => A], e2: repr[Unit => A]): repr[A]
-  // 3) I used the real if statement
-  // How could I splice the Expr[] of e1 and e2 but not evaluate them, how to keep them as CBN ?
-
 }
 
 object Main {
@@ -49,21 +43,12 @@ object Main {
 
     override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
     override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
-    //in the paper : let fix f = .<let rec self n = .~(f .<self>.) n in self>.
-    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = lam((x: Expr[A]) => f(fix(f))(x)) //'{ (~f(fix(f)))(_: A) }
+    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) } //cannot stop recursion -> throw StackOverflowError
 
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
     override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
     override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
     override def if_[A](cond: Expr[Boolean], e1: => Expr[A], e2: => Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
-    // 1) if_[A](cond: Expr[Boolean], e1: Unit => Expr[A], e2: Unit => Expr[A]): Expr[A] = '{ if(~cond) ~(e1(0)) else ~(e2(0)) }
-    //      I can't do ~(e1) because it's not possible to splice "Unit=>quoted.Expr"
-    //      I can't do ~(e1()) because there is a missing argument
-    //      So I give him a dummy argument : ~(e1(0)) but I'm obviously back with a StackOverflowError
-    // 2) if_[A](cond: Expr[Boolean], e1: Expr[Unit => A], e2: => Expr[Unit => A]): Expr[A] = '{ if(~cond) (~e1)(0) else (~e2)(0) }
-    //      I can't do (~e1)() because there is a missing argument
-    //      I can give it a dummy argument (~e1)(0) but I'd have to change most of the functions to take "Unit => ..." as arguments so it's not a good solution
-    // I wanted to see e2 in "if_" so I used "e2.show" but it threw an ArrayOutOfBoundsexception
   }
 
 
@@ -88,31 +73,18 @@ object Main {
     //(if(x <= 1) true else false)(1)
     val t3 = app(
       lam((x: Expr[Int]) => if_(leq(x, int(1)), bool(true), bool(false))),
-      // 1) lam((x: Expr[Int]) => if_(leq(x, int(1)), (u: Unit) => bool(true), (u: Unit) => bool(false))),
-      // 2) lam((x: Expr[Int]) => if_(leq(x, int(1)), bool((u: Unit) => true), bool((u: Unit) => false))),
-      //    I call "bool((u: Unit) => true)" but I'd have to change the function "bool(b: Boolean): Expr[Boolean]" so I don't think it is the right solution
       int(1))
     println("show : " + t3.show)
     println("res : " + t3.run)
     println("======================")
 
+    /** this cannot work, using evalQuoted.fix -> infinite recursion
     //factorial(5),
     val t4 = app(fix((f: Expr[Int => Int]) =>
-              '{ (n: Int) => ~if_(leq('(n), int(1)), '(n), mul(f(add('(n), int(-1))), '(n))) }), //same as t5: 'lam( (n: Expr[Int]) => if_(leq(n, int(1)), n, mul(f(add(n, int(-1))), n)))'
-              // 1) '{ (n: Int) => ~if_(leq('(n), int(1)), (u: Unit) => '(n), (u: Unit) => mul(f(add('(n), int(-1))), '(n))) }),
-              // 2) too ugly to print there
-              // 3) with the real if-statement : '{ (n: Int) => if(n <= 1) n else ~mul('(n), f(add('(n), int(-1)))) }), still got the error ---> more likely that the problem comes from "fix"
+              '{ (n: Int) => ~if_(leq('(n), int(1)), '(n), mul(f(add('(n), int(-1))), '(n))) }),
               int(5))
     println("show : " + t4.show)
     println("res : " + t4.run)
-    println("======================")
-
-    /** t4 = t5
-    val t5 = app(fix((f: Expr[Int => Int]) =>
-            lam( (n: Expr[Int]) => if_(leq(n, int(1)), n, mul(f(add(n, int(-1))), n)))),
-            int(5))
-    println("show : " + t5.show)
-    println("res : " + t5.run)
     println("======================")*/
 
     ////////////////////////////////////////////////////////////////
