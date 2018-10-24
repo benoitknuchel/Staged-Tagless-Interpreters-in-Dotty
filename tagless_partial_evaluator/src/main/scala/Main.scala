@@ -21,7 +21,7 @@ trait SymanticsD[repr[_, _]] {
 
   def lam[A: Type, B: Type](f: repr[A, A] => repr[B, B]): repr[repr[A, A] => repr[B, B], A => B]
   def app[A, B](f: repr[repr[A, A] => repr[B, B], A => B], arg: repr[A, A]): repr[B, B]
-  //def fix[A, B](f: repr[repr[A, A] => repr[B, B], A => B] => repr[repr[A, A] => repr[B, B], A => B]): repr[repr[A, A] => repr[B, B], A => B]
+  def fix[A: Type, B: Type](f: repr[repr[A, A] => repr[B, B], A => B] => repr[repr[A, A] => repr[B, B], A => B]): repr[repr[A, A] => repr[B, B], A => B]
 
   def add(x: repr[Int, Int], y: repr[Int, Int]): repr[Int, Int]
   def mul(x: repr[Int, Int], y: repr[Int, Int]): repr[Int, Int]
@@ -40,7 +40,7 @@ object Main {
 
     override def lam[A: Type, B: Type](f: A => B): A => B = f
     override def app[A, B](f: A => B, arg: A): B = f(arg)
-    override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A)
+    override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
 
     override def add(x: Int, y: Int): Int = x + y
     override def mul(x: Int, y: Int): Int = x * y
@@ -55,8 +55,8 @@ object Main {
     override def bool(b: Boolean): Expr[Boolean] = b.toExpr
 
     override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
-    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg)
-    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) }
+    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
+    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) } //cannot stop recursion -> throw StackOverflowError
 
     override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
     override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
@@ -71,8 +71,7 @@ object Main {
   type StatDyn[A, B] = (Option[A], Expr[B])
   val partialEval: SymanticsD[StatDyn] = new SymanticsD[StatDyn] {
 
-    //To extract the dynamic part wihtout needing to lift the static one
-    //Reify and reflect functions, reify=?asFunction
+    //To extract the dynamic part without needing to lift the static one
     def abstr[A, B](statDyn: StatDyn[A, B]): Expr[B] = statDyn._2
     def pdyn[A, B](x: Expr[B]): StatDyn[A, B] = (None, x)
 
@@ -81,12 +80,17 @@ object Main {
 
     override def lam[A: Type, B: Type](f: StatDyn[A, A] => StatDyn[B, B]): StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B] = (Some(f), evalQuoted.lam((x: Expr[A]) => abstr(f(pdyn(x)))))
     override def app[A, B](f: StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B], arg: StatDyn[A, A]): StatDyn[B, B] = f._1 match {
-      case Some(f) => f(arg) //f is static but we don't know about arg -> f: (Some(StatDyn[A, A] => StatDyn[B, B]), Expr[A => B])
-      case _ => pdyn(evalQuoted.app(abstr(f), abstr(arg)))
+      case Some(f) => f(arg) //f is (always?) static but we don't know about arg -> f: (Some(StatDyn[A, A] => StatDyn[B, B]), Expr[A => B])
+      case _ => pdyn(evalQuoted.app(abstr(f), abstr(arg))) //I don't think it'll ever come here
     }
-    /* TODO : understand and finish 'fix'
-    override def fix[A, B](f: StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B] => StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B]): StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B] =
-      f(pdyn(evalQuoted.fix((x: Expr[A]) => abstr(f(pdyn(x))))))*/
+    override def fix[A: Type, B: Type](f: StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B] => StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B]): StatDyn[StatDyn[A, A] => StatDyn[B, B], A => B] = {
+      def fdyn: Expr[A => B] = evalQuoted.fix((x: Expr[A => B]) => abstr(f(pdyn(x))))
+      lazy val self: StatDyn[A, A] => StatDyn[B, B] = {
+        case e @ (_: Some[_], _) => app(f(lam(self)), e)
+        case a => pdyn(evalQuoted.app(fdyn, (abstr(a))))
+      }
+      (Some(self), fdyn)
+    }
 
     override def add(x: StatDyn[Int, Int], y: StatDyn[Int, Int]): StatDyn[Int, Int] = (x._1, y._1) match {
       case (Some(0), Some(a)) => y
@@ -119,24 +123,30 @@ object Main {
     //(b=b)(true)
     val t1 = app(lam((b: StatDyn[Boolean, Boolean]) => b), bool(true))
     println("======================")
-    println("(" + t1._1 + ", " + t1._2.show + ")")
-    println("run_dynamic : " + t1._2.run)
-    println("======================")
-
+    printStatDyn(t1)
     //(x*x)(4)
     val t2 = app(lam((x: StatDyn[Int, Int]) => mul(x, x)), int(4))
-    println("(" + t2._1 + ", " + t2._2.show + ")")
-    println("run_dynamic : " + t2._2.run)
-    println("======================")
-
+    printStatDyn(t2)
     //(if(x <= 1) true else false)(1)
     val t3 = app(
       lam((x: StatDyn[Int, Int]) => if_(leq(x, int(1)), bool(true), bool(false))),
       int(1))
-    println("(" + t3._1 + ", " + t3._2.show + ")")
-    println("run_dynamic : " + t3._2.run)
-    println("======================")
+    printStatDyn(t3)
 
+    //factorial(5)
+    val t4 = app(
+      fix((fact: StatDyn[StatDyn[Int, Int] => StatDyn[Int, Int], Int => Int]) =>
+        (lam((n: StatDyn[Int, Int]) => if_(leq(n, int(1)), n, mul(n, app(fact, add(n, int(-1)))))))
+      ), int(10)
+    )
+    printStatDyn(t4)
+
+  }
+
+  def printStatDyn[A](s: StatDyn[A, A]): Unit ={
+    println("(" + s._1 + ", " + s._2.show + ")")
+    println("run_dynamic : " + s._2.run)
+    println("======================")
   }
 
 }
