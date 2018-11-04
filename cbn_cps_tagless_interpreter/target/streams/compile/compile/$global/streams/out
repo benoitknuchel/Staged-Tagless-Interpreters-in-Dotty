@@ -1,0 +1,17 @@
+[0m[[0m[31merror[0m] [0m[0m[34m-- [E006] Unbound Identifier Error: /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/src/main/scala/Main.scala:25:115 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m25 |[0m    [33mdef[0m [36mfx[0m([36mfi[0m: [35mRepr[Repr[A, _] => Repr[B, _], _][0m => [35mRepr[Repr[A, _] => Repr[B, _], _][0m): [35mRepr[A, _][0m => [35mRepr[B, _][0m = app(f(lam(fx(f))), _: [35mRepr[A, _][0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                                                                   [31m^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                          not found: app[0m
+[0m[[0m[31merror[0m] [0m[0m[34m-- [E007] Type Mismatch Error: /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/src/main/scala/Main.scala:33:75 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m    [33mdef[0m [36mko[0m([36mk[0m: [35mDouble[0m => [35mW[0m): [35mW[0m = x.ko(([36mv1[0m: [35mDouble[0m) => y.ko(([36mv2[0m: [35mDouble[0m) => k(v1 + v2)))[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                                          [31m^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                           found:    W[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                           required: y.W[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                           [0m
+[0m[[0m[31merror[0m] [0m[0m[34m-- [E007] Type Mismatch Error: /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/src/main/scala/Main.scala:48:48 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m48 |[0m  [33mdef[0m [36mrun[0m[[35mA[0m]([36mx[0m: [35mRepr[A, _][0m): [35mA[0m = x.ko(([36mv[0m: [35mA[0m) => v)[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                found:    A(v)[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                required: x.W[0m
+[0m[[0m[31merror[0m] [0m[0m   |                                                [0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

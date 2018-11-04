@@ -1,0 +1,21 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/dotty-simple_0.10-0.1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN$Repr.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN$Repr.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CBN$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/cbn_cps_tagless_interpreter/target/scala-0.10/classes/CBN$$anon$1.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
