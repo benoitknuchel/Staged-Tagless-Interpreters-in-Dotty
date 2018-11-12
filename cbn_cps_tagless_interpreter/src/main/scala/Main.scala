@@ -30,7 +30,7 @@ object CBN_tagless {
 
 
   def neg(x: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
-    def ko(k: Double => x.W): x.W = x.ko((v: Double) => k(-v)) //this compiles but I'm not sure about it
+    def ko(k: Double => W): W = x.ko((v: Double) => k(-v))
   }
   def add(x: Repr[Double, _], y: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
     def ko(k: Double => W): W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 + v2)))
@@ -50,7 +50,7 @@ object CBN_tagless {
     def k0(k: A => W): W = cond.ko((vb: Boolean) => if(vb) (e1).ko(k) else (e2).ko(k))
   }
 
-  
+
   def run[A](x: Repr[A, _]): A = x.ko((v: A) => v)
 
 }
