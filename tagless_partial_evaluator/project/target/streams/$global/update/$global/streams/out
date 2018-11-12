@@ -5,6 +5,13 @@
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'compile'
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#global-plugins;0.0 {compile=[default(compile)]}
+[debug] 	found org.scala-sbt#global-plugins;0.0 in inter-project
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -103,6 +110,13 @@
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -192,6 +206,15 @@
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [test]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -4817,6 +4840,17 @@
 [debug] resolving dependencies for configuration 'compile-internal'
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile-internal]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -9669,6 +9703,17 @@
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [runtime-internal]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -9784,6 +9829,21 @@
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [test]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [runtime]
 [debug] == resolving dependencies for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT [compile]
+[debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->org.scala-sbt#global-plugins;0.0 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
 [debug] == resolving dependencies default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT->ch.epfl.lamp#sbt-dotty;0.2.4 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.6 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.6 {provided=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.6 {scala-tool=[default, optional(default)], provided=[default(compile)]}
@@ -15116,225 +15176,44 @@
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-databind;2.9.0!jackson-databind.jar(bundle)
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to /home/benoit/.ivy2/cache
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.9.0!jackson-annotations.jar(bundle)
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to /home/benoit/.ivy2/cache
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] no default cache defined: set to /home/benoit/.ivy2/cache
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (33ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;1.2.2!compiler-interface.jar
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#sbt;1.2.3!sbt.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.9.0!jackson-core.jar(bundle)
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] 	[NOT REQUIRED] org.scala-sbt#util-interface;1.2.2!util-interface.jar
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#main_2.12;1.2.3!main_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.9.0!jackson-core.jar(bundle)
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#logic_2.12;1.2.3!logic_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#actions_2.12;1.2.3!actions_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#run_2.12;1.2.3!run_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#scripted-plugin_2.12;1.2.3!scripted-plugin_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#main-settings_2.12;1.2.3!main-settings_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#command_2.12;1.2.3!command_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#scripted-sbt-redux_2.12;1.2.3!scripted-sbt-redux_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
-[debug] 	[NOT REQUIRED] org.scala-sbt#collections_2.12;1.2.3!collections_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#launcher-interface;1.0.4!launcher-interface.jar
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-core;2.8.1!log4j-core.jar
-[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.8.1!log4j-api.jar
-[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-slf4j-impl;2.8.1!log4j-slf4j-impl.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-logging_2.12;1.2.2!util-logging_2.12.jar
-[debug] 	[NOT REQUIRED] com.github.cb372#scalacache-caffeine_2.12;0.20.0!scalacache-caffeine_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#io_2.12;1.2.1!io_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#librarymanagement-core_2.12;1.2.1!librarymanagement-core_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-compile_2.12;1.2.2!zinc-compile_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-relation_2.12;1.2.2!util-relation_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#librarymanagement-ivy_2.12;1.2.1!librarymanagement-ivy_2.12.jar
-[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-scalajson_2.12;0.8.2!sjson-new-scalajson_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-position_2.12;1.2.2!util-position_2.12.jar
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] com.eed3si9n#shaded-scalajson_2.12;1.0.0-M4!shaded-scalajson_2.12.jar
-[debug] 	[NOT REQUIRED] org.spire-math#jawn-parser_2.12;0.10.4!jawn-parser_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar
-[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-core_2.12;0.8.2!sjson-new-core_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#completion_2.12;1.2.3!completion_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#tasks_2.12;1.2.3!tasks_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#task-system_2.12;1.2.3!task-system_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#testing_2.12;1.2.3!testing_2.12.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-classpath_2.12;1.2.2!zinc-classpath_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-tracking_2.12;1.2.2!util-tracking_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-ivy-integration_2.12;1.2.2!zinc-ivy-integration_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-apiinfo_2.12;1.2.2!zinc-apiinfo_2.12.jar
-[debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc_2.12;1.2.2!zinc_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-control_2.12;1.2.2!util-control_2.12.jar
-[debug] 	[NOT REQUIRED] com.swoval#apple-file-events;1.3.2!apple-file-events.jar
-[debug] 	[NOT REQUIRED] net.java.dev.jna#jna;4.5.0!jna.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] net.java.dev.jna#jna-platform;4.5.0!jna-platform.jar
-[debug] 	[NOT REQUIRED] com.lmax#disruptor;3.3.6!disruptor.jar
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-cache_2.12;1.2.2!util-cache_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-murmurhash_2.12;0.8.2!sjson-new-murmurhash_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;1.2.3!test-agent.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-classfile_2.12;1.2.2!zinc-classfile_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#compiler-bridge_2.12;1.2.2!compiler-bridge_2.12.jar
-[debug] 	[NOT REQUIRED] com.eed3si9n#gigahorse-okhttp_2.12;0.3.0!gigahorse-okhttp_2.12.jar
-[debug] 	[NOT REQUIRED] com.squareup.okhttp3#okhttp-urlconnection;3.7.0!okhttp-urlconnection.jar
-[debug] 	[NOT REQUIRED] com.jcraft#jsch;0.1.54!jsch.jar
-[debug] 	[NOT REQUIRED] com.squareup.okhttp3#okhttp;3.7.0!okhttp.jar
-[debug] 	[NOT REQUIRED] com.eed3si9n#gigahorse-core_2.12;0.3.0!gigahorse-core_2.12.jar
-[debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.2!ssl-config-core_2.12.jar(bundle)
-[debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.jar
-[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (237ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (88ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] com.typesafe#config;1.2.0!config.jar(bundle)
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] com.squareup.okio#okio;1.12.0!okio.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-compile-core_2.12;1.2.2!zinc-compile-core_2.12.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-core_2.12;1.2.2!zinc-core_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.5!scala-parser-combinators_2.12.jar(bundle)
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] settings loaded (34ms)
@@ -15346,111 +15225,34 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-persist_2.12;1.2.2!zinc-persist_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#sbt;1.2.3!sbt.jar
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.6!scala-library.jar
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] com.google.protobuf#protobuf-java;3.3.1!protobuf-java.jar(bundle)
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	[NOT REQUIRED] com.trueaccord.lenses#lenses_2.12;0.4.12!lenses_2.12.jar
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] 	[NOT REQUIRED] org.scala-sbt#sbinary_2.12;0.5.0!sbinary_2.12.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] com.lihaoyi#fastparse_2.12;0.4.2!fastparse_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	[NOT REQUIRED] com.trueaccord.scalapb#scalapb-runtime_2.12;0.6.0!scalapb-runtime_2.12.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	[NOT REQUIRED] com.lihaoyi#sourcecode_2.12;0.1.3!sourcecode_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#core-macros_2.12;1.2.3!core-macros_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#protocol_2.12;1.2.3!protocol_2.12.jar
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	[NOT REQUIRED] com.lihaoyi#fastparse-utils_2.12;0.4.2!fastparse-utils_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt.ipcsocket#ipcsocket;1.0.0!ipcsocket.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#util-scripted_2.12;1.2.2!util-scripted_2.12.jar
-[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] settings loaded (24ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (61ms)
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#main_2.12;1.2.3!main_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#actions_2.12;1.2.3!actions_2.12.jar
+[debug] settings loaded (16ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15459,10 +15261,7 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	[NOT REQUIRED] com.github.ben-manes.caffeine#caffeine;2.5.6!caffeine.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (147ms)
+[debug] settings loaded (15ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15471,139 +15270,26 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] 	[NOT REQUIRED] com.github.cb372#scalacache-core_2.12;0.20.0!scalacache-core_2.12.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt.ivy#ivy;2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310!ivy.jar
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#logic_2.12;1.2.3!logic_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#command_2.12;1.2.3!command_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#scripted-sbt-redux_2.12;1.2.3!scripted-sbt-redux_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#collections_2.12;1.2.3!collections_2.12.jar
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] 	[NOT REQUIRED] org.scala-sbt#run_2.12;1.2.3!run_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#main-settings_2.12;1.2.3!main-settings_2.12.jar
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (96ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (106ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (365ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (33ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (53ms)
-[debug] settings loaded (327ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (110ms)
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (331ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (346ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (80ms)
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (25ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15612,18 +15298,7 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (111ms)
+[debug] settings loaded (8ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15632,90 +15307,23 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (143ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#scripted-plugin_2.12;1.2.3!scripted-plugin_2.12.jar
+[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-api;2.8.1!log4j-api.jar
+[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-slf4j-impl;2.8.1!log4j-slf4j-impl.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (106ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (140ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (132ms)
-[debug] settings loaded (141ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	local [file]
+[debug] 	[NOT REQUIRED] com.github.cb372#scalacache-caffeine_2.12;0.20.0!scalacache-caffeine_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
+[debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-core;2.8.1!log4j-core.jar
 [debug] 	[NOT REQUIRED] org.apache.logging.log4j#log4j-core;2.8.1!log4j-core.jar(test-jar)
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (139ms)
+[debug] settings loaded (22ms)
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15726,9 +15334,9 @@
 [debug] 	local [file]
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#launcher-interface;1.0.4!launcher-interface.jar
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (142ms)
+[debug] settings loaded (16ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15737,183 +15345,139 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (321ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#librarymanagement-core_2.12;1.2.1!librarymanagement-core_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-compile_2.12;1.2.2!zinc-compile_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-relation_2.12;1.2.2!util-relation_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-position_2.12;1.2.2!util-position_2.12.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-scalajson_2.12;0.8.2!sjson-new-scalajson_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#librarymanagement-ivy_2.12;1.2.1!librarymanagement-ivy_2.12.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-core_2.12;0.8.2!sjson-new-core_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#io_2.12;1.2.1!io_2.12.jar
 [debug] no default ivy user dir defined: set to /home/benoit/.ivy2
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-logging_2.12;1.2.2!util-logging_2.12.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#shaded-scalajson_2.12;1.0.0-M4!shaded-scalajson_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.6!scala-reflect.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#tasks_2.12;1.2.3!tasks_2.12.jar
+[debug] 	[NOT REQUIRED] org.spire-math#jawn-parser_2.12;0.10.4!jawn-parser_2.12.jar
+[debug] settings loaded (12ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	[NOT REQUIRED] org.scala-sbt#completion_2.12;1.2.3!completion_2.12.jar
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 	[NOT REQUIRED] org.scala-sbt#task-system_2.12;1.2.3!task-system_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-tracking_2.12;1.2.2!util-tracking_2.12.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] 	[NOT REQUIRED] org.scala-sbt#testing_2.12;1.2.3!testing_2.12.jar
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (9ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (8ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 	[NOT REQUIRED] com.swoval#apple-file-events;1.3.2!apple-file-events.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-control_2.12;1.2.2!util-control_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc_2.12;1.2.2!zinc_2.12.jar
+[debug] 	[NOT REQUIRED] net.java.dev.jna#jna-platform;4.5.0!jna-platform.jar
+[debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.6!scala-compiler.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-ivy-integration_2.12;1.2.2!zinc-ivy-integration_2.12.jar
+[debug] 	[NOT REQUIRED] net.java.dev.jna#jna;4.5.0!jna.jar
+[debug] 	[NOT REQUIRED] com.lmax#disruptor;3.3.6!disruptor.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-apiinfo_2.12;1.2.2!zinc-apiinfo_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-classpath_2.12;1.2.2!zinc-classpath_2.12.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] 	[NOT REQUIRED] com.jcraft#jsch;0.1.54!jsch.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#sjson-new-murmurhash_2.12;0.8.2!sjson-new-murmurhash_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;1.2.3!test-agent.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#compiler-bridge_2.12;1.2.2!compiler-bridge_2.12.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#gigahorse-okhttp_2.12;0.3.0!gigahorse-okhttp_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-classfile_2.12;1.2.2!zinc-classfile_2.12.jar
+[debug] 	[NOT REQUIRED] com.squareup.okhttp3#okhttp-urlconnection;3.7.0!okhttp-urlconnection.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-cache_2.12;1.2.2!util-cache_2.12.jar
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (339ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] 	[NOT REQUIRED] com.squareup.okhttp3#okhttp;3.7.0!okhttp.jar
+[debug] 	[NOT REQUIRED] com.typesafe#config;1.2.0!config.jar(bundle)
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-core_2.12;1.2.2!zinc-core_2.12.jar
+[debug] 	[NOT REQUIRED] com.squareup.okio#okio;1.12.0!okio.jar
+[debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.2!ssl-config-core_2.12.jar(bundle)
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-persist_2.12;1.2.2!zinc-persist_2.12.jar
+[debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] 	[NOT REQUIRED] com.trueaccord.scalapb#scalapb-runtime_2.12;0.6.0!scalapb-runtime_2.12.jar
+[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#zinc-compile-core_2.12;1.2.2!zinc-compile-core_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.5!scala-parser-combinators_2.12.jar(bundle)
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] settings loaded (11ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (182ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (186ms)
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (369ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (177ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (192ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] settings loaded (187ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (160ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (324ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (190ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (174ms)
+[debug] 	[NOT REQUIRED] com.eed3si9n#gigahorse-core_2.12;0.3.0!gigahorse-core_2.12.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] no default cache defined: set to /home/benoit/.ivy2/cache
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] settings loaded (7ms)
+[debug] 	default cache: /home/benoit/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (13ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -15923,412 +15487,34 @@
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (216ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (459ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (463ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (186ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (184ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] 	[NOT REQUIRED] com.google.protobuf#protobuf-java;3.3.1!protobuf-java.jar(bundle)
+[debug] 	[NOT REQUIRED] com.trueaccord.lenses#lenses_2.12;0.4.12!lenses_2.12.jar
+[debug] 	[NOT REQUIRED] com.lihaoyi#sourcecode_2.12;0.1.3!sourcecode_2.12.jar
+[debug] 	[NOT REQUIRED] com.lihaoyi#fastparse-utils_2.12;0.4.2!fastparse-utils_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt.ipcsocket#ipcsocket;1.0.0!ipcsocket.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#protocol_2.12;1.2.3!protocol_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#core-macros_2.12;1.2.3!core-macros_2.12.jar
+[debug] 	[NOT REQUIRED] com.github.ben-manes.caffeine#caffeine;2.5.6!caffeine.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#util-scripted_2.12;1.2.2!util-scripted_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
+[debug] 	[NOT REQUIRED] com.github.cb372#scalacache-core_2.12;0.20.0!scalacache-core_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt.ivy#ivy;2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310!ivy.jar
+[debug] 	[NOT REQUIRED] com.lihaoyi#fastparse_2.12;0.4.2!fastparse_2.12.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#sbinary_2.12;0.5.0!sbinary_2.12.jar
+[debug] no default ivy user dir defined: set to /home/benoit/.ivy2
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (194ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (197ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] settings loaded (242ms)
-[debug] 	default [chain] [local, main]
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	default resolver: default
-[debug] 	public [ibiblio]
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (352ms)
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (200ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (515ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (248ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (240ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (239ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (221ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (250ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (241ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (493ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (257ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (525ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (231ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (260ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (219ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (243ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] settings loaded (269ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (240ms)
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (272ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (519ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (394ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	local [file]
-[debug] settings loaded (289ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (288ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] settings loaded (237ms)
-[debug] settings loaded (272ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (121ms)
+[debug] settings loaded (23ms)
+[debug] settings loaded (9ms)
 [debug] 	default cache: /home/benoit/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -16345,77 +15531,7 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] settings loaded (263ms)
-[debug] settings loaded (272ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (226ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] no default cache defined: set to /home/benoit/.ivy2/cache
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (302ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (240ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (315ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/home/benoit/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (218ms)
-[debug] 	default cache: /home/benoit/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] :: resolution report :: resolve 1838ms :: artifacts dl 592ms
+[debug] :: resolution report :: resolve 1706ms :: artifacts dl 155ms
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT compile produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-compile.xml
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT runtime produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-runtime.xml
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT test produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-test.xml
@@ -16427,5 +15543,5 @@
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT plugin produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-plugin.xml
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT pom produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-pom.xml
 [debug] 	report for default#tagless_partial_evaluator-build;0.1.0-SNAPSHOT scala-tool produced in /home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/tagless_partial_evaluator/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-tagless_partial_evaluator-build-scala-tool.xml
-[debug] 	resolve done (1838ms resolve - 592ms download)
+[debug] 	resolve done (1706ms resolve - 155ms download)
 [info] Done updating.

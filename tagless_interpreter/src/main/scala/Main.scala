@@ -15,41 +15,43 @@ trait Symantics[repr[_]] {
   def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
 }
 
+//Tagless interpreter, no wrapper
+import Main.Id
+object eval extends Symantics[Id] {
+  override def int(x: Int): Int= x
+  override def bool(b: Boolean): Boolean = b
+
+  override def lam[A: Type, B: Type](f: A => B): A => B = f
+  override def app[A, B](f: A => B, arg: A): B = f(arg)
+  override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
+
+  override def add(x: Int, y: Int): Int = x + y
+  override def mul(x: Int, y: Int): Int = x * y
+  override def leq(x: Int, y: Int): Boolean = x <= y
+  //e1 and e2 must be CBN because of 'fix' : if either e1 or e2 is a recursion then' it'll be evaluated immediately and so on -> infinite loop
+  override def if_[A](cond: Boolean, e1: => A, e2: => A): A = if (cond) e1 else e2
+}
+
+//Staged tagless interpreter
+object evalQuoted extends Symantics[Expr] {
+  override def int(x: Int): Expr[Int] = x.toExpr
+  override def bool(b: Boolean): Expr[Boolean] = b.toExpr
+
+  override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
+  override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
+  override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) } //cannot stop recursion -> throw StackOverflowError
+
+  override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
+  override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
+  override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
+  override def if_[A](cond: Expr[Boolean], e1: => Expr[A], e2: => Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
+}
+
+
 object Main {
   implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
 
-  //Tagless interpreter, no wrapper
   type Id[A] = A
-  val eval: Symantics[Id] = new Symantics[Id] {
-    override def int(x: Int): Int= x
-    override def bool(b: Boolean): Boolean = b
-
-    override def lam[A: Type, B: Type](f: A => B): A => B = f
-    override def app[A, B](f: A => B, arg: A): B = f(arg)
-    override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
-
-    override def add(x: Int, y: Int): Int = x + y
-    override def mul(x: Int, y: Int): Int = x * y
-    override def leq(x: Int, y: Int): Boolean = x <= y
-    //e1 and e2 must be CBN because of 'fix' : if either e1 or e2 is a recursion then' it'll be evaluated immediately and so on -> infinite loop
-    override def if_[A](cond: Boolean, e1: => A, e2: => A): A = if (cond) e1 else e2
-  }
-
-
-  //Staged tagless interpreter
-  val evalQuoted: Symantics[Expr] = new Symantics[Expr] {
-    override def int(x: Int): Expr[Int] = x.toExpr
-    override def bool(b: Boolean): Expr[Boolean] = b.toExpr
-
-    override def lam[A: Type, B: Type](f: Expr[A] => Expr[B]): Expr[A => B] =  '{ (x: A) => ~(f('(x))) }
-    override def app[A, B](f: Expr[A => B], arg: Expr[A]): Expr[B] = f(arg) //'{ (~f)(~arg) }, use .asFunction()
-    override def fix[A: Type, B: Type](f: Expr[A => B] => Expr[A => B]): Expr[A => B] = '{ (~f(fix(f)))(_: A) } //cannot stop recursion -> throw StackOverflowError
-
-    override def add(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x + ~y }
-    override def mul(x: Expr[Int], y: Expr[Int]): Expr[Int] = '{ ~x * ~y }
-    override def leq(x: Expr[Int], y: Expr[Int]): Expr[Boolean] = '{ ~x <= ~y }
-    override def if_[A](cond: Expr[Boolean], e1: => Expr[A], e2: => Expr[A]): Expr[A] = '{ if(~cond) ~e1 else ~e2 }
-  }
 
 
   def main(args: Array[String]): Unit = {
@@ -90,7 +92,8 @@ object Main {
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
-/**
+
+    /*
     //TEST ID
 
     import eval._
