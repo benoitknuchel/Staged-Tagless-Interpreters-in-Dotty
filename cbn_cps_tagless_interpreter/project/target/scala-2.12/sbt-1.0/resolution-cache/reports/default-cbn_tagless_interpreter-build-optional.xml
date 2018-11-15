@@ -3,13 +3,13 @@
 <ivy-report version="1.0">
 	<info
 		organisation="default"
-		module="cbn_cps_tagless_interpreter-build"
+		module="cbn_tagless_interpreter-build"
 		revision="0.1.0-SNAPSHOT"
 		extra-scalaVersion="2.12"
 		extra-sbtVersion="1.0"
 		conf="optional"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181114083829"/>
+		date="20181114083433"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

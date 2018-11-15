@@ -1,70 +1,76 @@
-import scala.quoted._
+//import scala.quoted._
 
 
-object CBN_tagless {
+// type (’c,’da,’db) darr -> type Darr[DA, DB] = Function1[DA, DB]
 
-  //type (’c,’sv,’dv) repr = {ko: ’w. (’sv -> ’w) -> ’w}
-  trait Repr[SV, DV] {
-    type W
-    def ko(k: SV => W): W
-  }
+// type (’sv,’dv) repr = { ko: ’w. (’sv -> ’w) -> ’w }
+trait ReprPoly[SV, DV, W] {
+  def ko(k: SV => W): W
+}
 
 
-  def num(x: Double): Repr[Double, _] = new Repr[Double, _] {
+trait RCN {
+  type W
+  abstract class Repr[SV, DV] extends ReprPoly[SV, DV, W]
+
+
+  def num[DV](x: Double): Repr[Double, DV] = new Repr[Double, DV] {
     def ko(k: Double => W): W = k(x)
   }
-  def bool(b: Boolean): Repr[Boolean, _] = new Repr[Boolean, _] {
+  def bool[DV](b: Boolean): Repr[Boolean, DV] = new Repr[Boolean, DV] {
     def ko(k: Boolean => W): W = k(b)
   }
 
-  def lam[A, B](f: Repr[A, _] => Repr[B, _]): Repr[Repr[A, _] => Repr[B, _], _] = new Repr[Repr[A, _] => Repr[B, _], _] {
-    def ko(k: (Repr[A, _] => Repr[B, _]) => W): W = k(f)
+
+  def lam[A, B, DV](f: Repr[A, DV] => Repr[B, DV]): Repr[Repr[A, DV] => Repr[B, DV], DV] = new Repr[Repr[A, DV] => Repr[B, DV], DV] {
+    def ko(k: (Repr[A, DV] => Repr[B, DV]) => W): W = k(f)
   }
-  def app[A, B](f: Repr[Repr[A, _] => Repr[B, _], _], arg: Repr[A, _]): Repr[B, _] = new Repr[B, _] {
-    def ko(k: B => f.W): f.W = f.ko((vf: Repr[A, _] => Repr[B, _]) => vf(arg).ko(k))
+  def app[A, B, DV](f: Repr[Repr[A, DV] => Repr[B, DV], DV], arg: Repr[A, DV]): Repr[B, DV] = new Repr[B, DV] {
+    def ko(k: B => W): W = f.ko((vf: Repr[A, DV] => Repr[B, DV]) => vf(arg).ko(k))
   }
-  def fix[A, B](f: Repr[Repr[A, _] => Repr[B, _], _] => Repr[Repr[A, _] => Repr[B, _], _]): Repr[Repr[A, _] => Repr[B, _], _] = {
-    def fx(fi: Repr[Repr[A, _] => Repr[B, _], _] => Repr[Repr[A, _] => Repr[B, _], _]): Repr[A, _] => Repr[B, _] = app(f(lam(fx(f))), _: Repr[A, _])
+  def fix[A, B, DV](f: Repr[Repr[A, DV] => Repr[B, DV], DV] => Repr[Repr[A, DV] => Repr[B, DV], DV]): Repr[Repr[A, DV] => Repr[B, DV], DV] = {
+    def fx(fi: Repr[Repr[A, DV] => Repr[B, DV], DV] => Repr[Repr[A, DV] => Repr[B, DV], DV]): Repr[A, DV] => Repr[B, DV] = app(f(lam(fx(f))), _: Repr[A, DV])
     lam(fx(f))
   }
 
 
-  def neg(x: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
+  def neg[DV](x: Repr[Double, DV]): Repr[Double, DV] = new Repr[Double, DV] {
     def ko(k: Double => W): W = x.ko((v: Double) => k(-v))
   }
-  def add(x: Repr[Double, _], y: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
-    def ko(k: Double => W): W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 + v2)))
+  // let add e1 e2 = {ko = fun k -> e1.ko (fun v1 -> e2.ko (fun v2 -> k (v1 + v2)))}
+  def add[DV](x: Repr[Double, DV], y: Repr[Double, DV]): Repr[Double, DV] = new Repr[Double, DV] {
+    def ko(k: Double => W): W =
+      x.ko((v1: Double) => y.ko((v2: Double) => k(v1 + v2)))
   }
-  def mul(x: Repr[Double, _], y: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
-    def ko(k: Double => W): x.W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 * v2)))
+  def mul[DV](x: Repr[Double, DV], y: Repr[Double, DV]): Repr[Double, DV] = new Repr[Double, DV] {
+    def ko(k: Double => W): W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 * v2)))
   }
-  def div(x: Repr[Double, _], y: Repr[Double, _]): Repr[Double, _] = new Repr[Double, _] {
-    def ko(k: Double => W): x.W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 / v2)))
+  def div[DV](x: Repr[Double, DV], y: Repr[Double, DV]): Repr[Double, DV] = new Repr[Double, DV] {
+    def ko(k: Double => W): W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 / v2)))
   }
-  def leq(x: Repr[Double, _], y: Repr[Double, _]): Repr[Double, _] = new Repr[Boolean, _] {
+  def leq[DV](x: Repr[Double, DV], y: Repr[Double, DV]): Repr[Boolean, DV] = new Repr[Boolean, DV] {
     def ko(k: Boolean => W): W = x.ko((v1: Double) => y.ko((v2: Double) => k(v1 <= v2)))
   }
-
-
-  def if_[A](cond: Repr[Boolean, _], e1: => Repr[A, _], e2: => Repr[A, _]): Repr[A, _] = new Repr[A, _] {
-    def k0(k: A => W): W = cond.ko((vb: Boolean) => if(vb) (e1).ko(k) else (e2).ko(k))
+  def if_[A, DV](cond: Repr[Boolean, DV], e1: => Repr[A, DV], e2: => Repr[A, DV]): Repr[A, DV] = new Repr[A, DV] {
+    def ko(k: A => W): W = cond.ko((vb: Boolean) => if(vb) e1.ko(k) else e2.ko(k))
   }
 
 
-  def run[A](x: Repr[A, _]): A = x.ko((v: A) => v)
-
+  def run[A, DV](x: Repr[A, DV]): A = x.ko((v: A) => v)
 }
 
 
 
 object Main {
 
+  val R = new RCN {
+    override type W = this.type
+  }
+
   def main(args: Array[String]): Unit = {
 
-    //import CBN_tagless._
-
-    val t0 = num(10)
-    println("t0 : " + run(t0))
+    val t0 = R.num(10)
+    println("t0 : " + R.run(t0))
     /*
     //(b=b)(true)
     val t1 = app(lam((b: Boolean) => b), bool(true))

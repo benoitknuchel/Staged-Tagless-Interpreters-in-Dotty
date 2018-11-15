@@ -3,19 +3,19 @@
 <ivy-report version="1.0">
 	<info
 		organisation="default"
-		module="cbn_cps_tagless_interpreter-build"
+		module="cbn_tagless_interpreter-build"
 		revision="0.1.0-SNAPSHOT"
 		extra-scalaVersion="2.12"
 		extra-sbtVersion="1.0"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181114083829"/>
+		date="20181114083433"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="1.2.3" status="release" pubdate="20180914071836" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sbt/sbt" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="BSD New" url="https://github.com/sbt/sbt/blob/0.13/LICENSE"/>
 				<metadata-artifact status="no" details="" size="3224" time="0" location="/home/benoit/.ivy2/cache/org.scala-sbt/sbt/ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-sbt/sbt/1.2.3/sbt-1.2.3.pom"/>
-				<caller organisation="default" name="cbn_cps_tagless_interpreter-build" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="default" name="cbn_tagless_interpreter-build" conf="provided" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="0.1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="sbt" type="jar" ext="jar" status="no" details="" size="61957" time="0" location="/home/benoit/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-1.2.3.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-sbt/sbt/1.2.3/sbt-1.2.3.jar"/>
@@ -1199,7 +1199,6 @@
 				<caller organisation="org.scala-sbt" name="sbinary_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="0.5.0"/>
 				<caller organisation="org.scala-sbt" name="util-logging_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.2"/>
 				<caller organisation="org.scala-sbt" name="librarymanagement-ivy_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.1"/>
-				<caller organisation="default" name="cbn_cps_tagless_interpreter-build" conf="provided" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="org.scala-sbt" name="zinc-compile_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.2"/>
 				<caller organisation="org.scala-lang.modules" name="scala-xml_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.0.6"/>
 				<caller organisation="org.scala-sbt" name="testing_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.3"/>
@@ -1237,6 +1236,7 @@
 				<caller organisation="org.scala-sbt" name="completion_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.3"/>
 				<caller organisation="org.scala-sbt" name="logic_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.3"/>
 				<caller organisation="org.scala-sbt" name="zinc-classpath_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.2"/>
+				<caller organisation="default" name="cbn_tagless_interpreter-build" conf="provided" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="org.scala-sbt" name="util-scripted_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.2"/>
 				<caller organisation="com.eed3si9n" name="sjson-new-scalajson_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="0.8.2"/>
 				<caller organisation="org.scala-sbt" name="collections_2.12" conf="compile, runtime" rev="2.12.6" rev-constraint-default="2.12.6" rev-constraint-dynamic="2.12.6" callerrev="1.2.3"/>

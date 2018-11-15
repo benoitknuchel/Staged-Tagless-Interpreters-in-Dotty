@@ -3,19 +3,19 @@
 <ivy-report version="1.0">
 	<info
 		organisation="default"
-		module="cbn_cps_tagless_interpreter-build"
+		module="cbn_tagless_interpreter-build"
 		revision="0.1.0-SNAPSHOT"
 		extra-scalaVersion="2.12"
 		extra-sbtVersion="1.0"
-		conf="runtime"
+		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181114083829"/>
+		date="20181114083433"/>
 	<dependencies>
 		<module organisation="ch.epfl.lamp" name="sbt-dotty">
 			<revision name="0.2.4" status="release" pubdate="20180920234423" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lampepfl/dotty" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="BSD New" url="https://github.com/lampepfl/dotty/blob/master/LICENSE.md"/>
 				<metadata-artifact status="no" details="" size="3391" time="0" location="/home/benoit/.ivy2/cache/scala_2.12/sbt_1.0/ch.epfl.lamp/sbt-dotty/ivy-0.2.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/ch/epfl/lamp/sbt-dotty_2.12_1.0/0.2.4/sbt-dotty-0.2.4.pom"/>
-				<caller organisation="default" name="cbn_cps_tagless_interpreter-build" conf="compile, runtime" rev="0.2.4" rev-constraint-default="0.2.4" rev-constraint-dynamic="0.2.4" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<caller organisation="default" name="cbn_tagless_interpreter-build" conf="compile, runtime-internal, runtime, optional" rev="0.2.4" rev-constraint-default="0.2.4" rev-constraint-dynamic="0.2.4" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
 				<artifacts>
 					<artifact name="sbt-dotty" type="jar" ext="jar" status="no" details="" size="46160" time="0" location="/home/benoit/.ivy2/cache/scala_2.12/sbt_1.0/ch.epfl.lamp/sbt-dotty/jars/sbt-dotty-0.2.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/ch/epfl/lamp/sbt-dotty_2.12_1.0/0.2.4/sbt-dotty-0.2.4.jar"/>
@@ -84,9 +84,9 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-sbt" name="global-plugins">
-			<revision name="0.0" status="integration" pubdate="20181114083824" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
+			<revision name="0.0" status="integration" pubdate="20181114083430" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
-				<caller organisation="default" name="cbn_cps_tagless_interpreter-build" conf="compile, runtime" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<caller organisation="default" name="cbn_tagless_interpreter-build" conf="compile, runtime-internal, runtime, optional" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
 				<artifacts>
 				</artifacts>
 			</revision>
