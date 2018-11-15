@@ -14,3 +14,5 @@ tagless_partial_evaluator/.idea/
 tagless_partial_evaluator/target/
 cbn_cps_tagless_interpreter/.idea/
 cbn_cps_tagless_interpreter/target/
+cbv_cps_transformer/.idea/
+cbv_cps_transformer/target/
