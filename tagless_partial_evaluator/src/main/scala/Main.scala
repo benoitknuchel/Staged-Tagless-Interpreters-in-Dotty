@@ -118,7 +118,7 @@ object partialEval extends SymanticsD[StatDyn] {
   }
   override def div(x: StatDyn[Double, Double], y: StatDyn[Double, Double]): StatDyn[Double, Double] = (x._1, y._1) match {
     case (Some(0), Some(a)) => num(0)
-    case (Some(a), Some(0)) => num(Double.MaxValue)
+    case (Some(a), Some(0)) => throw new ArithmeticException //num(Double.MaxValue)
     case (Some(a), Some(1)) => x
     case _ => pdyn(evalQuoted.div(abstr(x), abstr(y)))
   }
