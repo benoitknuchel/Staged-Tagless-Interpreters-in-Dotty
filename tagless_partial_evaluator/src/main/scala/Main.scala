@@ -59,7 +59,7 @@ object evalQuoted extends Symantics {
 
 }
 
-//Tagless partial evaluator
+//Tagless partial evaluator using eval and evalQuoted
 object partialEval extends Symantics {
   import Main.StatDyn
 
