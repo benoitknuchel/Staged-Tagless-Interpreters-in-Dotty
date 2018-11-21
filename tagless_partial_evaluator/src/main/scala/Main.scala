@@ -1,23 +1,8 @@
 import scala.quoted._
 
-//repr[_] is a wrapper
-trait Symantics[repr[_]] {
-  def num(x: Double): repr[Double]
-  def bool(b: Boolean): repr[Boolean]
+trait Symantics {
+  type repr[_, _]
 
-  def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
-  def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
-  def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
-
-  def neg(x: repr[Double]): repr[Double]
-  def add(x: repr[Double], y: repr[Double]): repr[Double]
-  def mul(x: repr[Double], y: repr[Double]): repr[Double]
-  def div(x: repr[Double], y: repr[Double]): repr[Double]
-  def leq(x: repr[Double], y: repr[Double]): repr[Boolean]
-  def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
-}
-
-trait SymanticsD[repr[_, _]] {
   def num(x: Double): repr[Double, Double]
   def bool(b: Boolean): repr[Boolean, Boolean]
 
@@ -34,27 +19,29 @@ trait SymanticsD[repr[_, _]] {
 }
 
 //Tagless interpreter, no wrapper
-import Main.Id
-object eval extends Symantics[Id] {
+object eval extends Symantics {
+  import Main.Id
+  type repr[SV, DV] = Id[DV]
 
-  override def num(x: Double): Double = x
-  override def bool(b: Boolean): Boolean = b
+  override def num(x: Double): Id[Double] = x
+  override def bool(b: Boolean): Id[Boolean] = b
 
-  override def lam[A: Type, B: Type](f: A => B): A => B = f
-  override def app[A, B](f: A => B, arg: A): B = f(arg)
-  override def fix[A: Type, B: Type](f: (A => B) => (A => B)): A => B = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
+  override def lam[A: Type, B: Type](f: Id[A => B]): Id[A => B] = f
+  override def app[A, B](f: Id[A => B], arg: Id[A]): Id[B] = f(arg)
+  override def fix[A: Type, B: Type](f: Id[A => B] => Id[A => B]): Id[A => B] = f(fix(f))(_: A) //(x: A) => f(fix(f))(x)
 
-  override def neg(x: Double): Double = -x
-  override def add(x: Double, y: Double): Double = x + y
-  override def mul(x: Double, y: Double): Double = x * y
-  override def div(x: Double, y: Double): Double = x / y
-  override def leq(x: Double, y: Double): Boolean = x <= y
-  override def if_[A](cond: Boolean, e1: => A, e2: => A): A = if (cond) e1 else e2
+  override def neg(x: Id[Double]): Id[Double] = -x
+  override def add(x: Id[Double], y: Id[Double]): Id[Double] = x + y
+  override def mul(x: Id[Double], y: Id[Double]): Id[Double] = x * y
+  override def div(x: Id[Double], y: Id[Double]): Id[Double] = x / y
+  override def leq(x: Id[Double], y: Id[Double]): Id[Boolean] = x <= y
+  override def if_[A](cond: Id[Boolean], e1: => Id[A], e2: => Id[A]): Id[A] = if (cond) e1 else e2
 
 }
 
 //Staged tagless interpreter
-object evalQuoted extends Symantics[Expr] {
+object evalQuoted extends Symantics {
+  type repr[SV, DV] = Expr[DV]
 
   override def num(x: Double): Expr[Double] = x.toExpr
   override def bool(b: Boolean): Expr[Boolean] = b.toExpr
@@ -73,10 +60,10 @@ object evalQuoted extends Symantics[Expr] {
 }
 
 //Tagless partial evaluator
-import Main.StatDyn
-object partialEval extends SymanticsD[StatDyn] {
-
+object partialEval extends Symantics {
   import Main.StatDyn
+
+  type repr[SV, DV] = StatDyn[SV, DV]
 
   //To extract the dynamic part without needing to lift the static one
   def abstr[A, B](statDyn: StatDyn[A, B]): Expr[B] = statDyn._2
@@ -134,7 +121,6 @@ object partialEval extends SymanticsD[StatDyn] {
 }
 
 
-
 object Main {
   implicit val toolbox: scala.quoted.Toolbox = scala.quoted.Toolbox.make
 
@@ -146,37 +132,37 @@ object Main {
     import partialEval._
 
     //(b=b)(true)
-    val t1 = app(lam((b: StatDyn[Boolean, Boolean]) => b), bool(true))
+    val t1 = app(lam((b: repr[Boolean, Boolean]) => b), bool(true))
     println("======================")
     printStatDyn(t1)
 
     //(x*x)(4)
-    val t2 = app(lam((x: StatDyn[Double, Double]) => mul(x, x)), num(4))
+    val t2 = app(lam((x: repr[Double, Double]) => mul(x, x)), num(4))
     printStatDyn(t2)
 
     //(if(x <= 1) true else false)(1)
     val t3 = app(
-      lam((x: StatDyn[Double, Double]) => if_(leq(x, num(1)), bool(true), bool(false))),
+      lam((x: repr[Double, Double]) => if_(leq(x, num(1)), bool(true), bool(false))),
       num(1))
     printStatDyn(t3)
 
     //factorial(10)
     val t4 = app(
-      fix((fact: StatDyn[StatDyn[Double, Double] => StatDyn[Double, Double], Double => Double]) =>
-        (lam((n: StatDyn[Double, Double]) => if_(leq(n, num(1)), n, mul(n, app(fact, add(n, neg(num(1))))))))
+      fix((fact: repr[repr[Double, Double] => repr[Double, Double], Double => Double]) =>
+        (lam((n: repr[Double, Double]) => if_(leq(n, num(1)), n, mul(n, app(fact, add(n, neg(num(1))))))))
       ), num(10)
     )
     printStatDyn(t4)
 
-  //sum(1/n) 1 to 10
-  val t5 = app(
-    fix((rec: StatDyn[StatDyn[Double, Double] => StatDyn[Double, Double], Double => Double]) =>
-      (lam((n: StatDyn[Double, Double]) => if_(leq(n, num(1)), div(num(1), n), add(div(num(1), mul(n, n)), app(rec, add(n, neg(num(1))))))))
-    ), num(10)
-  )
-  println("Sum(1-10) 1/n^2 : ")
-  println("pi^2 / 6 = " + Math.PI*Math.PI / 6)
-  printStatDyn(t5)
+    //sum(1/n) 1 to 10
+    val t5 = app(
+      fix((rec: repr[repr[Double, Double] => repr[Double, Double], Double => Double]) =>
+        (lam((n: repr[Double, Double]) => if_(leq(n, num(1)), div(num(1), n), add(div(num(1), mul(n, n)), app(rec, add(n, neg(num(1))))))))
+      ), num(100)
+    )
+    println("Sum(1-100) 1/n^2 : ")
+    println("pi^2 / 6 = " + Math.PI*Math.PI / 6)
+    printStatDyn(t5)
 
   }
 

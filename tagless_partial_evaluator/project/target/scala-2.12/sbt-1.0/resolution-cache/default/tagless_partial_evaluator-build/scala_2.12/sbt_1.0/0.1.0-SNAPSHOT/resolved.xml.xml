@@ -4,7 +4,7 @@
 		module="tagless_partial_evaluator-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20181112152510"
+		publication="20181116203514"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
