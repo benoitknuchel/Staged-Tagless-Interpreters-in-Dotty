@@ -121,35 +121,61 @@ object Main {
   type StatDyn[A, B] = (Option[A], Expr[B])
 
   def main(args: Array[String]): Unit = {
-/*
+
+    println("=== BASIC EVALUATOR TEST ===")
+
     //Those two examples work
     val eval2CPS = new CPSTransformer(eval2)
 
+    //num(10)
     val t1 = eval2CPS.num[Double](10)
     val t1Res = t1(v => v)
     println("===================")
     println("t1 : " + t1Res)
     println("===================")
 
+    //lam(x => x)(true)
     val t2 = eval2CPS.app(eval2CPS.lam(x => x), eval2CPS.bool(true))
     val t2Res = t2(v => v)
     println("t2 : " + t2Res)
-    println("===================")*/
+    println("===================")
 
+    //lam(x => if(x) 1 else 2) (true)
+    val t3 = eval2CPS.app(eval2CPS.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+              eval2CPS.if_(x, eval2CPS.num(1), eval2CPS.num(2))), eval2CPS.bool(true))
+    val t3Res = t3(v => v)
+    println("t3 : " + t3Res)
+    println("===================")
+
+
+
+
+    
+    println("=== QUOTED EVALUATOR TEST ===")
 
     val quotedEvaluator2 = new CPSTransformer(evalQuoted2)
 
-    val t1 : Expr[(Double => Double) => Double] = quotedEvaluator2.num[Double](10)
-    val t1Res: Expr[Double] = t1('{ v => v }) //The compiler doesn't complain here, so the type of t1Res must be indeed Expr[Double]
+    //num(10)
+    val t11= quotedEvaluator2.num[Double](10)
+    val t11Res= t11('{ v => v })
     println("===================")
-    println("t1 : " + t1Res) //But here if we run this we have : Expr(Expr(<pickled tasty>) <applied to> Expr(<pickled tasty>))
-                            // => if we call t1Res.show (or run) we have a scala.MatchError
+    println("t11.show : " + t11Res.show)
+    println("t11.run : " + t11Res.run)
     println("===================")
 
-    //Same error with t2
-    val t2: Expr[(Boolean => Boolean) => Boolean] = quotedEvaluator2.app(quotedEvaluator2.lam[Boolean, Boolean, Boolean](x => x), quotedEvaluator2.bool(true))
-    val t2Res: Expr[Boolean] = t2('{ v => v })
-    println("t2 : " + t2Res)
+    //lam(x => x)(true)
+    val t21 = quotedEvaluator2.app(quotedEvaluator2.lam(x => x), quotedEvaluator2.bool(true))
+    val t21Res = t21('{ v => v })
+    println("t21.show : " + t21Res.show)
+    println("t21.run : " + t21Res.run)
+    println("===================")
+
+    //lam(x => if(x) 1 else 2) (true)
+    val t31 = quotedEvaluator2.app(quotedEvaluator2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+              quotedEvaluator2.if_(x, quotedEvaluator2.num(1), quotedEvaluator2.num(2))), quotedEvaluator2.bool(true))
+    val t31Res = t31('{ v => v})
+    println("t31.show : " + t31Res.show)
+    println("t31.run : " + t31Res.run)
     println("===================")
 
   }
