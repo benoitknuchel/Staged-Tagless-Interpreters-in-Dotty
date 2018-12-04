@@ -3,6 +3,24 @@ import partialEval._
 import eval._
 import evalQuoted._
 
+trait Symantics2 {
+  type repr[_]
+
+  def num(x: Double): repr[Double]
+  def bool(b: Boolean): repr[Boolean]
+
+  def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
+  def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
+  def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
+
+  def neg(x: repr[Double]): repr[Double]
+  def add(x: repr[Double], y: repr[Double]): repr[Double]
+  def mul(x: repr[Double], y: repr[Double]): repr[Double]
+  def div(x: repr[Double], y: repr[Double]): repr[Double]
+  def leq(x: repr[Double], y: repr[Double]): repr[Boolean]
+  def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
+}
+
 object eval2 extends Symantics2 {
   import Main.Id
   type repr[DV] = Id[DV]
@@ -62,8 +80,8 @@ class CPSTransformer[Sym <: Symantics2  & Singleton](val S : Sym){
   def app[A: Type, B: Type, W: Type](f: repr[((A => (B => W) => W) => W) => W], arg: repr[(A => W) => W]): repr[(B => W) => W] =
     S.lam(k =>
       S.app(f, S.lam(fv =>
-      S.app(arg, S.lam(v =>
-      S.app(S.app(fv, v), k))))))
+        S.app(arg, S.lam(v =>
+          S.app(S.app(fv, v), k))))))
 
   def fix[A: Type, B: Type, W: Type](f: repr[((A => (B => W) => W) => W) => W] => repr[((A => (B => W) => W) => W) => W]): repr[((A => (B => W) => W) => W) => W] =
     S.fix(f)
@@ -77,8 +95,8 @@ class CPSTransformer[Sym <: Symantics2  & Singleton](val S : Sym){
   def add[W: Type](x: repr[(Double => W) => W], y: repr[(Double => W) => W]): repr[(Double => W) => W] =
     S.lam(k =>
       S.app(x, S.lam(v1 =>
-      S.app(y, S.lam(v2 =>
-      S.app(k, S.add(v1, v2)))))))
+        S.app(y, S.lam(v2 =>
+          S.app(k, S.add(v1, v2)))))))
 
   def mul[W: Type](x: repr[(Double => W) => W], y: repr[(Double => W) => W]): repr[(Double => W) => W] =
     S.lam(k =>
@@ -103,7 +121,7 @@ class CPSTransformer[Sym <: Symantics2  & Singleton](val S : Sym){
       S.app(cond, S.lam(vCond =>
         S.if_(vCond,
           S.app(e1, k),
-            S.app(e2, k)))))
+          S.app(e2, k)))))
   }
 
   //def run[A: Type](x: repr[(A => A) => A]): A = x(v => v)
@@ -124,39 +142,63 @@ object Main {
 
     println("=== BASIC EVALUATOR TEST ===")
 
-    //Those two examples work
-    val eval2CPS = new CPSTransformer(eval2)
+    val e2 = new CPSTransformer(eval2)
 
     //num(10)
-    val t1 = eval2CPS.num[Double](10)
+    val t1 = e2.num[Double](10)
     val t1Res = t1(v => v)
     println("===================")
     println("t1 : " + t1Res)
     println("===================")
 
     //lam(x => x)(true)
-    val t2 = eval2CPS.app(eval2CPS.lam(x => x), eval2CPS.bool(true))
+    val t2 = e2.app(e2.lam(x => x), e2.bool(true))
     val t2Res = t2(v => v)
     println("t2 : " + t2Res)
     println("===================")
 
     //lam(x => if(x) 1 else 2) (true)
-    val t3 = eval2CPS.app(eval2CPS.lam[Boolean, Double, Double](x => //need to explicity write these types to work
-              eval2CPS.if_(x, eval2CPS.num(1), eval2CPS.num(2))), eval2CPS.bool(true))
+    val t3 = e2.app(e2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+              e2.if_(x, e2.num(1), e2.num(2))), e2.bool(true))
     val t3Res = t3(v => v)
     println("t3 : " + t3Res)
+    println("===================")
+
+    //factorial(5)
+    val t4 = e2.app(
+      e2.fix[Double, Double, Double](fact => //need to explicity write these types to work
+        (e2.lam(n =>
+          e2.if_(e2.leq(n, e2.num(1)),
+            n,
+            e2.mul(n, e2.app(fact, e2.add(n, e2.neg(e2.num(1))))))))
+      ), e2.num(10)
+    )
+    val t4Res = t4(v => v)
+    println("t4 : " + t4Res)
+    println("===================")
+
+    //sum(1/n^2) 1 to 10
+    val t5 = e2.app(
+      e2.fix[Double, Double, Double](rec => //need to explicity write these types to work
+        (e2.lam(n => e2.if_(e2.leq(n, e2.num(1)),
+          e2.div(e2.num(1), n), e2.add(e2.div(e2.num(1), e2.mul(n, n)), e2.app(rec, e2.add(n, e2.neg(e2.num(1))))))))
+      ), e2.num(10)
+    )
+    val t5Res = t5(v => v)
+    println("pi^2 / 6 = " + Math.PI*Math.PI / 6)
+    println("t5 : " + t5Res)
     println("===================")
 
 
 
 
-    
+
     println("=== QUOTED EVALUATOR TEST ===")
 
-    val quotedEvaluator2 = new CPSTransformer(evalQuoted2)
+    val q2 = new CPSTransformer(evalQuoted2)
 
     //num(10)
-    val t11= quotedEvaluator2.num[Double](10)
+    val t11= q2.num[Double](10)
     val t11Res= t11('{ v => v })
     println("===================")
     println("t11.show : " + t11Res.show)
@@ -164,22 +206,49 @@ object Main {
     println("===================")
 
     //lam(x => x)(true)
-    val t21 = quotedEvaluator2.app(quotedEvaluator2.lam(x => x), quotedEvaluator2.bool(true))
+    val t21 = q2.app(q2.lam(x => x), q2.bool(true))
     val t21Res = t21('{ v => v })
     println("t21.show : " + t21Res.show)
     println("t21.run : " + t21Res.run)
     println("===================")
 
     //lam(x => if(x) 1 else 2) (true)
-    val t31 = quotedEvaluator2.app(quotedEvaluator2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
-              quotedEvaluator2.if_(x, quotedEvaluator2.num(1), quotedEvaluator2.num(2))), quotedEvaluator2.bool(true))
+    val t31 = q2.app(q2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+              q2.if_(x, q2.num(1), q2.num(2))), q2.bool(true))
     val t31Res = t31('{ v => v})
     println("t31.show : " + t31Res.show)
     println("t31.run : " + t31Res.run)
     println("===================")
 
-  }
+    /* //Can't use these two tests because they use evalQuoted.fix which throws a StackOverflowError
+    //factorial(5)
+    val t41 = q2.app(
+      q2.fix[Double, Double, Double](fact => //need to explicity write these types to work
+        (q2.lam(n =>
+          q2.if_(q2.leq(n, q2.num(1)),
+            n,
+            q2.mul(n, q2.app(fact, q2.add(n, q2.neg(q2.num(1))))))))
+      ), q2.num(10)
+    )
+    val t41Res = t41('{ v => v})
+    println("t41.show : " + t41Res.show)
+    println("t41.run : " + t41Res.run)
+    println("===================")
 
+    //sum(1/n^2) 1 to 10
+    val t51 = q2.app(
+      q2.fix[Double, Double, Double](rec => //need to explicity write these types to work
+        (q2.lam(n => q2.if_(q2.leq(n, q2.num(1)),
+          q2.div(q2.num(1), n), q2.add(q2.div(q2.num(1), q2.mul(n, n)), q2.app(rec, q2.add(n, q2.neg(q2.num(1))))))))
+      ), q2.num(10)
+    )
+    val t51Res = t51('{ v => v})
+    println("t51.show : " + t51Res.show)
+    println("t51.run : " + t51Res.run)
+    println("===================")*/
+
+
+  }
 }
 
 

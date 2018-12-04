@@ -1,24 +1,5 @@
 import scala.quoted._
 
-/*
-trait Symantics {
-  type repr[_, _, _]
-
-  def num(x: Double): repr[Double, Double, _]
-  def bool(b: Boolean): repr[Boolean, Boolean, _]
-
-  def lam[A: Type, B: Type](f: repr[A, A, _] => repr[B, B, _]): repr[repr[A, A, _] => repr[B, B, _], A => B, _]
-  def app[A, B](f: repr[repr[A, A, _] => repr[B, B, _], A => B, _], arg: repr[A, A, _]): repr[B, B, _]
-  def fix[A: Type, B: Type](f: repr[repr[A, A, _] => repr[B, B, _], A => B, _] => repr[repr[A, A, _] => repr[B, B, _], A => B, _]): repr[repr[A, A, _] => repr[B, B, _], A => B, _]
-
-  def neg(x: repr[Double, Double, _]): repr[Double, Double, _]
-  def add(x: repr[Double, Double, _], y: repr[Double, Double, _]): repr[Double, Double, _]
-  def mul(x: repr[Double, Double, _], y: repr[Double, Double, _]): repr[Double, Double, _]
-  def div(x: repr[Double, Double, _], y: repr[Double, Double, _]): repr[Double, Double, _]
-  def leq(x: repr[Double, Double, _], y: repr[Double, Double, _]): repr[Boolean, Boolean, _]
-  def if_[A](cond: repr[Boolean, Boolean, _], e1: => repr[A, A, _], e2: => repr[A, A, _]): repr[A, A, _]
-}*/
-
 trait Symantics {
   type repr[_, _]
 
@@ -35,24 +16,6 @@ trait Symantics {
   def div(x: repr[Double, Double], y: repr[Double, Double]): repr[Double, Double]
   def leq(x: repr[Double, Double], y: repr[Double, Double]): repr[Boolean, Boolean]
   def if_[A](cond: repr[Boolean, Boolean], e1: => repr[A, A], e2: => repr[A, A]): repr[A, A]
-}
-
-trait Symantics2 {
-  type repr[_]
-
-  def num(x: Double): repr[Double]
-  def bool(b: Boolean): repr[Boolean]
-
-  def lam[A: Type, B: Type](f: repr[A] => repr[B]): repr[A => B]
-  def app[A, B](f: repr[A => B], arg: repr[A]): repr[B]
-  def fix[A: Type, B: Type](f: repr[A => B] => repr[A => B]): repr[A => B]
-
-  def neg(x: repr[Double]): repr[Double]
-  def add(x: repr[Double], y: repr[Double]): repr[Double]
-  def mul(x: repr[Double], y: repr[Double]): repr[Double]
-  def div(x: repr[Double], y: repr[Double]): repr[Double]
-  def leq(x: repr[Double], y: repr[Double]): repr[Boolean]
-  def if_[A](cond: repr[Boolean], e1: => repr[A], e2: => repr[A]): repr[A]
 }
 
 //Tagless interpreter, no wrapper
