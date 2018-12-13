@@ -4,7 +4,7 @@
 		module="cbv_cps_transformer-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20181125175625"
+		publication="20181204223109"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

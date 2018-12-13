@@ -1,4 +1,3 @@
-// type (’c,’da,’db) darr -> type Darr[DA, DB] = Function1[DA, DB] //DA => DB
 
 // type (’sv,’dv) repr = { ko: ’w. (’sv -> ’w) -> ’w }
 abstract class repr[SV, DV] {
