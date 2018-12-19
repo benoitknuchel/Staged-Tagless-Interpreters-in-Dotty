@@ -18,6 +18,7 @@ trait Symantics {
   def if_[A](cond: repr[Boolean, Boolean], e1: => repr[A, A], e2: => repr[A, A]): repr[A, A]
 }
 
+//Extends the basic Symantics to add a state
 trait SymSI extends Symantics {
 
   abstract class repr[SV, DV] {
@@ -25,10 +26,15 @@ trait SymSI extends Symantics {
   }
 
   type State
-  type State_ST
+  type State_ST //static type of the state
 
-  def lapp[SA, DA, SB, DB](e2: repr[SA, DA], e1: repr[SA, DA] => repr[SB, DB]): repr[SB, DB]
+  //app with switched arguments, we first want to evaluate the argument
+  def lapp[SA, DA, SB, DB](arg: repr[SA, DA], f: repr[SA, DA] => repr[SB, DB]): repr[SB, DB]
+
+  //dereference the state -> returns the actual value of the state
   def deref(): repr[State_ST, State]
+
+  //set the state to the given value and returns the old one
   def set(a: repr[State_ST, State]): repr[State_ST, State]
 }
 
@@ -52,7 +58,7 @@ class RCPS() extends SymSI {
   def app[SA, DA, SB, DB](e1: repr[repr[SA, DA] => repr[SB, DB], DA => DB], 
                           e2: repr[SA, DA]): repr[SB, DB] = new repr[SB, DB] {
     def ko[W](k: (SB) => (State_ST => W)): State_ST => W = {
-      e1.ko[W]((f: repr[SA, DA] => repr[SB, DB]) => f.apply(e2).ko(k))
+      e1.ko[W]((f: repr[SA, DA] => repr[SB, DB]) => f(e2).ko(k))
     }
   }
 
@@ -96,9 +102,9 @@ class RCPS() extends SymSI {
   }
 
 
-  def lapp[SA, DA, SB, DB](e2: repr[SA, DA], e1: repr[SA, DA] => repr[SB, DB]): repr[SB, DB] = new repr[SB, DB] {
+  def lapp[SA, DA, SB, DB](arg: repr[SA, DA], f: repr[SA, DA] => repr[SB, DB]): repr[SB, DB] = new repr[SB, DB] {
     def ko[W](k: (SB) => (State_ST => W)): (State_ST => W) = {
-      e2.ko((v: SA) => app[SA, DA, SB, DB](lam[SA, DA, SB, DB](e1), new repr[SA, DA] {
+      arg.ko((v: SA) => app[SA, DA, SB, DB](lam[SA, DA, SB, DB](f), new repr[SA, DA] {
         def ko[W](k: (SA) => (State_ST => W)): (State_ST => W) = {
           k(v)
         }
