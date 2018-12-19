@@ -90,7 +90,7 @@ object Main {
         (r: Option[Expr[Int]]) => {
           eval(e2, env, fenv,
             (s: Option[Expr[Int]]) => (r, s) match {
-              case (Some(x), Some(y)) => '{if(~y == 0) ~k(None) else {val z = ~x / ~y; ~k(Some('{z}))}} //cannot do it like this, it will evaluate k(None) (-> throw Exception) even though it is not needed
+              case (Some(x), Some(y)) => '{if(~y == 0) throw new ArithmeticException else {val z = ~x / ~y; ~k(Some('{z}))}}
               case _ => k(None)
             }
           )
@@ -110,7 +110,7 @@ object Main {
     peval_k(p, env, fenv,
       (x: Option[Expr[Int]]) => x match {
         case Some(x) => x
-        case None => Int.MaxValue.toExpr //throw new IllegalArgumentException //k(None) comes from Div comes here
+        case None => throw new IllegalArgumentException
       })
 
   def peval_k(p: Prog, env: String => Expr[Int], fenv: String => Expr[Int] => Expr[Int], k: Option[Expr[Int]] => Expr[Int]): Expr[Int] =
@@ -120,7 +120,7 @@ object Main {
       case Program(Declaration(s1, s2, e1)::tl, e) => '{
         def f(x: Int): Int = ~{
             def body(cf: Expr[Int] => Expr[Int], y: Expr[Int]): Expr[Int] = eval(e1, ext(env, s2, y), ext(fenv, s1, cf), k)
-            repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), '(x)))(1.toExpr) //TODO: is this '(1.toExpr)' legal ?, I'd say yes because it seems to be never used, just here to typecheck
+            repeat(1, (a: Expr[Int]) => body((y: Expr[Int]) => '(f(~y)), '(x)))(1.toExpr)
         }
         ~peval_k(Program(tl, e), env, ext(fenv, s1, (y: Expr[Int]) => '(f(~y))), k)
       }

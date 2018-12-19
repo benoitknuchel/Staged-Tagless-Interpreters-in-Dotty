@@ -35,7 +35,6 @@ object Main {
     y: String => if(s == y) v else env(y)
   }
 
-  //HAVE TO CAST :Option[Int] or I get an ArrayOutOfBoundsException but still the output is weird... Correct but weird (null ...)
   //The evaluator
   def eval(e: Exp, env: String => Expr[Option[Int]], fenv: String => Expr[Int => Option[Int]]): Expr[Option[Int]] = e match {
     case int(x) => '(Some(~x.toExpr))

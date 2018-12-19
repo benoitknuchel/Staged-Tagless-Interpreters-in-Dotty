@@ -4,6 +4,7 @@ abstract class repr[SV, DV] {
   def ko[W](k: SV => W): W
 }
 
+//A call-by-name continuation passing style tagless interpreter
 trait RCN {
 
   def num[DV](x: Double): repr[Double, DV] = new repr[Double, DV] {

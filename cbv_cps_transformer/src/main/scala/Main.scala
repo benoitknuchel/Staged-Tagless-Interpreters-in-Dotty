@@ -3,6 +3,7 @@ import partialEval._
 import eval._
 import evalQuoted._
 
+//Represent Symantics but with repr[_] and not repr[_, _]
 trait Symantics2 {
   type repr[_]
 
@@ -60,11 +61,12 @@ object evalQuoted2 extends Symantics2 {
 
 }
 
+//A call-by-value continuation passing style transformer
+//Takes an intepreter extending Symantics2 as argument and transforms it into a cps interpreter
 class CPSTransformer[Sym <: Symantics2  & Singleton](val S : Sym){
   import S._
 
   type W = Unit
-  //type repr[SV, DV] = S.repr[SV, DV => W => W]
 
   def num[W: Type](x: Double): repr[(Double => W) => W]  = S.lam(k => S.app(k, S.num(x)))
 
@@ -124,12 +126,6 @@ class CPSTransformer[Sym <: Symantics2  & Singleton](val S : Sym){
           S.app(e2, k)))))
   }
 
-  //def run[A: Type](x: repr[(A => A) => A]): A = x(v => v)
-  //def run[A: Type, W: Type](x: repr[A], f: repr[A] => W): W = f(x)
-
-  //let run x = x.ko (fun v -> v)
-  //def run[SV, DV](x: repr[SV, DV]): SV = x.ko[SV]((v: SV) => v)
-
 }
 
 object Main {
@@ -158,7 +154,7 @@ object Main {
     println("===================")
 
     //lam(x => if(x) 1 else 2) (true)
-    val t3 = e2.app(e2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+    val t3 = e2.app(e2.lam[Boolean, Double, Double](x =>
               e2.if_(x, e2.num(1), e2.num(2))), e2.bool(true))
     val t3Res = t3(v => v)
     println("t3 : " + t3Res)
@@ -166,7 +162,7 @@ object Main {
 
     //factorial(5)
     val t4 = e2.app(
-      e2.fix[Double, Double, Double](fact => //need to explicity write these types to work
+      e2.fix[Double, Double, Double](fact =>
         (e2.lam(n =>
           e2.if_(e2.leq(n, e2.num(1)),
             n,
@@ -179,7 +175,7 @@ object Main {
 
     //sum(1/n^2) 1 to 10
     val t5 = e2.app(
-      e2.fix[Double, Double, Double](rec => //need to explicity write these types to work
+      e2.fix[Double, Double, Double](rec =>
         (e2.lam(n => e2.if_(e2.leq(n, e2.num(1)),
           e2.div(e2.num(1), n), e2.add(e2.div(e2.num(1), e2.mul(n, n)), e2.app(rec, e2.add(n, e2.neg(e2.num(1))))))))
       ), e2.num(10)
@@ -213,7 +209,7 @@ object Main {
     println("===================")
 
     //lam(x => if(x) 1 else 2) (true)
-    val t31 = q2.app(q2.lam[Boolean, Double, Double](x => //need to explicity write these types to work
+    val t31 = q2.app(q2.lam[Boolean, Double, Double](x =>
               q2.if_(x, q2.num(1), q2.num(2))), q2.bool(true))
     val t31Res = t31('{ v => v})
     println("t31.show : " + t31Res.show)
@@ -237,7 +233,7 @@ object Main {
 
     //sum(1/n^2) 1 to 10
     val t51 = q2.app(
-      q2.fix[Double, Double, Double](rec => //need to explicity write these types to work
+      q2.fix[Double, Double, Double](rec =>
         (q2.lam(n => q2.if_(q2.leq(n, q2.num(1)),
           q2.div(q2.num(1), n), q2.add(q2.div(q2.num(1), q2.mul(n, n)), q2.app(rec, q2.add(n, q2.neg(q2.num(1))))))))
       ), q2.num(10)
