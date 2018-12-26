@@ -1,0 +1,58 @@
+<component name="libraryTable">
+  <library name="sbt: ch.epfl.lamp:dotty-library_0.10:0.10.0-RC1:jar" type="Scala">
+    <properties>
+      <platform>Dotty</platform>
+      <language-level>Snapshot</language-level>
+      <compiler-classpath>
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-compiler_0.10/jars/dotty-compiler_0.10-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-doc_0.10/jars/dotty-doc_0.10-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-interfaces/jars/dotty-interfaces-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-library_0.10/jars/dotty-library_0.10-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty_0.10/jars/dotty_0.10-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/scala-library/jars/scala-library-0.10.0-RC1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/jars/jackson-annotations-2.2.3.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.9.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/jars/jackson-databind-2.2.3.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/bundles/jackson-dataformat-yaml-2.9.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-anchorlink/jars/flexmark-ext-anchorlink-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-autolink/jars/flexmark-ext-autolink-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-emoji/jars/flexmark-ext-emoji-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-gfm-strikethrough/jars/flexmark-ext-gfm-strikethrough-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-gfm-tables/jars/flexmark-ext-gfm-tables-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-gfm-tasklist/jars/flexmark-ext-gfm-tasklist-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-ins/jars/flexmark-ext-ins-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-superscript/jars/flexmark-ext-superscript-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-tables/jars/flexmark-ext-tables-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-wikilink/jars/flexmark-ext-wikilink-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-ext-yaml-front-matter/jars/flexmark-ext-yaml-front-matter-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-formatter/jars/flexmark-formatter-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-jira-converter/jars/flexmark-jira-converter-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark-util/jars/flexmark-util-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/com.vladsch.flexmark/flexmark/jars/flexmark-0.28.32.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.2.2.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/nl.big-o/liqp/jars/liqp-0.6.7.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.antlr/ST4/jars/ST4-4.0.7.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.antlr/antlr-runtime/jars/antlr-runtime-3.5.1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.antlr/antlr/jars/antlr-3.5.1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.jline/jline-reader/jars/jline-reader-3.9.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.jline/jline-terminal-jna/jars/jline-terminal-jna-3.9.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.jline/jline-terminal/jars/jline-terminal-3.9.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.jsoup/jsoup/jars/jsoup-1.7.2.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.nibor.autolink/autolink/jars/autolink-0.6.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.scala-lang.modules/scala-asm/bundles/scala-asm-6.0.0-scala-1.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.1.0.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.scala-sbt/compiler-interface/jars/compiler-interface-1.2.2.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.scala-sbt/util-interface/jars/util-interface-1.2.2.jar" />
+        <root url="file://$USER_HOME$/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.17.jar" />
+      </compiler-classpath>
+    </properties>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-library_0.10/jars/dotty-library_0.10-0.10.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/ch.epfl.lamp/dotty-library_0.10/srcs/dotty-library_0.10-0.10.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

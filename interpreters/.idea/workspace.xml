@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a3ceaea-6b58-4459-be75-10fb50c86e17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../cbv_cps_transformer/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../cbv_cps_transformer/src/main/scala/Main.scala" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="884613123">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="2" />
+          <entry key="scala" value="55" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="2" />
+          <entry key="Scala" value="55" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="77" />
+          <entry key="scala" value="2927" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="77" />
+          <entry key="Scala" value="2927" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/staged/continuationPassingStyle/continuationPassingStyle.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1728">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <folding>
+                <element signature="e#41#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/staged/controlledInlining/controlledInlining.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1710">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#35#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/staged/stagedInterpreter/stagedInterpreter.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+              <folding>
+                <element signature="e#34#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+        <option value="Class" />
+        <option value="Scala Object" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>symanti</find>
+      <find>symantics</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/Exercises/public/exams/final/2016/statement" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/GitExams/exams-knuchel/final" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/GitExams/exams-knuchel/midterm" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/GitExams/exams-knuchel/mock-final" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/GitExams/exams-knuchel/mock-midterm" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre5/SwEng/GitExams/exams-knuchel/mock-midterm/mock-midterm" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/staged/common.java" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/eval.java" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/eval.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/evalQuoted.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/partialEvaluator.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/common.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/staged_interpreter.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/stagedInterpreter.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/controlledInlining.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/continuationPassingStyle.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/stateImperativeFeatures.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/partialEvaluator.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/eval.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/evalQuoted.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/evalQuoted/evalQuoted.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByName.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByValueTransformer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/common.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByValueTransformer/callByValueTransformer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/stateImperativeFeatures/stateImperativeFeatures.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByName/callByName.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/partialEvaluator/partialEvaluator.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/evalStaged/evalStaged.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/continuationPassingStyle/continuationPassingStyle.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/controlledInlining/controlledInlining.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/stagedInterpreter/stagedInterpreter.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/interpreters/common.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/controlledInlining/controlledInlining.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/continuationPassingStyle/continuationPassingStyle.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/staged/stagedInterpreter/stagedInterpreter.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="463" />
+    <option name="y" value="27" />
+    <option name="width" value="940" />
+    <option name="height" value="796" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="staged" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="staged" type="462c0819:PsiDirectoryNode" />
+              <item name="continuationPassingStyle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="staged" type="462c0819:PsiDirectoryNode" />
+              <item name="controlledInlining" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="staged" type="462c0819:PsiDirectoryNode" />
+              <item name="stagedInterpreter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="tagless" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="tagless" type="462c0819:PsiDirectoryNode" />
+              <item name="basic_evaluators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interpreters" type="b2602c69:ProjectViewProjectNode" />
+              <item name="interpreters" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="tagless" type="462c0819:PsiDirectoryNode" />
+              <item name="basic_evaluators" type="462c0819:PsiDirectoryNode" />
+              <item name="eval" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545835519908" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.sbt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/staged" />
+      <recent name="$PROJECT_DIR$/src/main/scala/staged/interpreters" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test1.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dotty-simple" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test1" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Test1.t1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="dotty-simple" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="root [file:/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/interpreters/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="root-build [file:/home/benoit/Documents/EPFL/Projets/Bachelor/Interpreters/interpreters/]" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4635731151000" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="3897347277" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="249398541" />
+        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="3367803810" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../SimplestInterpreter/simplestinterpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../binding-time_improvement" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../cbn_cps_tagless_interpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../cbn_tagless_interpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../cbv_cps_transformer" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../controlled-inlining" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../controlled_inlining" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../simple_tagless_interpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../simplestagedinterpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../staged_interpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../state_imperative_features" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../tagless_interpreter" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../tagless_partial_evaluator" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../test_part" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../Tests/firsttest" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre3/FunctionalProgramming/workspace/squareNewton" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment1/project01" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment2/project02" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment3/project03" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment4/project04" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment5/project05" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment6/project06" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment7/project07" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment8/project08" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Semestre4/ParallelismConcurrency/workspace/Assignment9/project09" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a3ceaea-6b58-4459-be75-10fb50c86e17" name="Default Changelist" comment="" />
+      <created>1545243739854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545243739854</updated>
+      <workItem from="1545243744043" duration="4722000" />
+      <workItem from="1545297500219" duration="2483000" />
+      <workItem from="1545739558693" duration="11347000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18552000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17289221" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.12772925" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32969433" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="sbt" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17289221" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.12772925" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32969433" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="sbt" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/common.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/package.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/eval.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/eval.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/evalQuoted.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/interpreters/stagedInterpreter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <element signature="e#29#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/interpreters/controlledInlining.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#29#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/Test1.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/stateImperativeFeatures/stateImperativeFeatures.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByValueTransformer/callByValueTransformer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2286">
+          <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
+          <folding>
+            <element signature="e#67#93#0" expanded="true" />
+            <element signature="e#162#811#1" />
+            <element signature="e#845#1683#0" />
+            <element signature="e#1761#2814#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/continuation_passing_style/callByName/callByName.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1314">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/partialEvaluator/partialEvaluator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding>
+            <element signature="e#51#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/evalStaged/evalStaged.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+          <folding>
+            <element signature="e#45#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/interpreters/continuationPassingStyle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="e#29#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/common.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/tagless/basic_evaluators/eval/eval.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-558">
+          <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/continuationPassingStyle/continuationPassingStyle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1728">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#41#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/controlledInlining/controlledInlining.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#35#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/common.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/staged/stagedInterpreter/stagedInterpreter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#34#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
