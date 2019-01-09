@@ -24,8 +24,13 @@ object evalStaged extends Symantics {
   override def fix[SA: Type, DA: Type, SB: Type, DB: Type](f: repr[repr[SA, DA] => repr[SB, DB], DA => DB] =>
                                                               repr[repr[SA, DA] => repr[SB, DB], DA => DB]):
                                                               repr[repr[SA, DA] => repr[SB, DB], DA => DB] =
-    '{ (~f(fix(f)))(_: DA) } //cannot stop recursion with the actual implementation of staging -> throw StackOverflowError
-
+    '{
+        def self(n: DA): DB = {
+          ~f('(self)).apply('(n))
+        }
+      
+        (n: DA) => self(n)
+    }
   override def neg(x: Expr[Double]): Expr[Double] = '{ -(~x) }
 
   override def add(x: Expr[Double], y: Expr[Double]): Expr[Double] = '{ ~x + ~y }
@@ -66,6 +71,24 @@ object Main {
     println("result : " + t3.run)
     println("======================")
 
+    val t4 = app(
+      fix((fact: repr[repr[Double, Double] => repr[Double, Double], Double => Double]) =>
+        (lam((n: repr[Double, Double]) => if_(leq(n, num(1)), n, mul(n, app(fact, add(n, neg(num(1))))))))
+      ), num(5)
+    )
+    println("factorial(5) : " + t4.show)
+    println("result : " + t4.run)
+    println("======================")
+
+    val t5 = app(
+      fix((rec: repr[repr[Double, Double] => repr[Double, Double], Double => Double]) =>
+        (lam((n: repr[Double, Double]) => if_(leq(n, num(1)),
+          div(num(1), n), add(div(num(1), mul(n, n)), app(rec, add(n, neg(num(1))))))))
+      ), num(10)
+    )
+    println("sum(1/n) 1 to 10 : " + t5.show)
+    println("result : " + t5.run)
+    println("======================")
   }
 
 }
